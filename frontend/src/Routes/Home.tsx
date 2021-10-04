@@ -7,12 +7,12 @@ import "./scss/Home.scss";
 
 const Home = () => {
   return (
-    <div className="HomeContainer">
+    <main className="Home__Container">
       <MainVideo />
       <Summary />
       <Bottom />
       <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 
 export default function MainVideo() {
   return (
-    <div className="MainVideo__Container">
-      <div className="MainVideo__Title">
+    <article className="MainVideo__Container">
+      <section className="MainVideo__Title">
         <img src={Logo} alt="shortFLIX LOGO" />
         <h1>,for your busy life</h1>
-        <Link to="/inspect">
+        <Link to="/test">
           <button>Get Started</button>
         </Link>
-      </div>
+      </section>
 
       <video muted autoPlay loop playsInline>
         <source src={Background} type="video/mp4" />
       </video>
-    </div>
+    </article>
   );
 }

@@ -1,0 +1,46 @@
+@import "../../Common/scss/_mixins.scss";
+
+.First__Container {
+  @include Container_Form();
+  .First__Contents {
+    @include Contents_Vertical_Form();
+    .First__Title {
+      width: 50%;
+      > img {
+        width: 85%;
+      }
+      > h2 {
+        font-size: 3.7rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+      }
+      > p {
+        line-height: 1.7;
+        opacity: 0.6;
+      }
+      > a {
+        > button {
+          background-color: #eb4d3d;
+          font-size: 18px;
+          color: white;
+          width: 140px;
+          height: 55px;
+          border: none;
+          border-radius: 10px;
+          margin-top: 30px;
+          cursor: pointer;
+        }
+      }
+    }
+    .First__Image {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      justify-content: right;
+      height: 40vh;
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}
