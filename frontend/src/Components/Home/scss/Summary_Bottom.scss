@@ -1,0 +1,41 @@
+.Summary-Bottom__Container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .Summary-Bottom__Contents {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    .Summary-Bottom__Title {
+      > div {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.3;
+        > h1 {
+          font-size: 4rem;
+          font-weight: 800;
+        }
+        > p {
+          &:first-child {
+            margin-top: 50px;
+          }
+          font-size: 13px;
+          opacity: 0.7;
+          margin-top: 10px;
+        }
+      }
+      margin-top: 50px;
+    }
+    > img {
+      margin-top: 40px;
+      width: 65%;
+      height: auto;
+    }
+  }
+}
