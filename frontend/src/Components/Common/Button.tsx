@@ -2,7 +2,7 @@ import React from 'react';
 import './scss/Button.scss'
 
 type ButtonProps = {
-    children: string;
+    children: any;
     styles?: string;
     onClick? : any;
 }
