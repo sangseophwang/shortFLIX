@@ -1,0 +1,25 @@
+@import "../../Common/scss/_mixins.scss";
+
+.Third__Container {
+  @include Container_Form();
+  .Third__Contents {
+    @include Contents_Vertical_Form();
+    .Third__Image {
+      width: 40%;
+    }
+    .Third__Text {
+      @include Introduction_Textbox();
+      .Third__Title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+      > p {
+        opacity: 0.5;
+      }
+      > a > button {
+        @include Report_Button();
+      }
+    }
+  }
+}

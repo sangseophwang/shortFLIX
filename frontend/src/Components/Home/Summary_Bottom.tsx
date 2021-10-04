@@ -4,9 +4,9 @@ import WorldMap from "../Common/Image/WorldMap.png";
 
 export default function Summary() {
   return (
-    <div className="Summary-Bottom__Container">
+    <article className="Summary-Bottom__Container">
       <div className="Summary-Bottom__Contents">
-        <div className="Summary-Bottom__Title">
+        <section className="Summary-Bottom__Title">
           <div>
             <h1>전 세계 컨텐츠를</h1>
             <h1>짧은 시간으로</h1>
@@ -26,9 +26,9 @@ export default function Summary() {
             </p>
             <p>자, 이제 리뷰의 세계로 떠나볼까요?</p>
           </div>
-        </div>
-        <img src={WorldMap} alt="" />
+        </section>
+        <img className="Summary-Bottom__Image" src={WorldMap} alt="" />
       </div>
-    </div>
+    </article>
   );
 }
