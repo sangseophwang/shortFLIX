@@ -1,3 +1,5 @@
+@import "../../Common/scss/_variables.scss";
+
 div {
   .title {
     position: absolute;
@@ -15,17 +17,6 @@ div {
       color: #e3e7e9;
       font-size: 40px;
       font-weight: 600;
-    }
-    button {
-      background-color: #eb4d3d;
-      font-size: 18px;
-      color: white;
-      width: 140px;
-      height: 55px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 30px;
-      cursor: pointer;
     }
   }
   video {
