@@ -4,7 +4,6 @@ import background from "../Common/Video/background.mp4";
 import Logo from "../Common/Image/shortFLIX.png";
 
 export default function MainVideo() {
-  const history = useHistory();
   return (
     <div>
       <div className="title">
