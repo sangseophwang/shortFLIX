@@ -2,8 +2,12 @@
 
 html {
   font-family: "Noto Sans KR", sans-serif !important;
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
+}
+
+div {
+  h1 {
+    color: red;
+    font-weight: 700;
+    font-size: 300px;
   }
 }
