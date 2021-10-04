@@ -2,6 +2,7 @@ import React from "react";
 import "./scss/MainVideo.scss";
 import background from "../Common/Video/background.mp4";
 import Logo from "../Common/Image/shortFLIX.png";
+import Button from "../Common/Button";
 
 export default function MainVideo() {
   return (
@@ -9,7 +10,7 @@ export default function MainVideo() {
       <div className="title">
         <img src={Logo} alt="shortFLIX LOGO" />
         <h1>,for your busy life</h1>
-        <button>Get Started</button>
+        <Button styles='btn-sm btn-red'>Get Started</Button>
       </div>
 
       <video muted autoPlay loop playsInline>
