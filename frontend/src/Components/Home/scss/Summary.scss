@@ -1,6 +1,7 @@
 @import "../../Common/scss/_mixins.scss";
 
 .Summary__Container {
+  margin-top: 60px;
   @include Container_Form();
   .Summary__Contents {
     @include Contents_Horizontal_Form();
@@ -13,7 +14,7 @@
       margin-top: 50px;
     }
     > p {
-      font-size: 13px;
+      font-size: 15px;
       opacity: 0.7;
       line-height: 1.5;
       margin-top: 10px;

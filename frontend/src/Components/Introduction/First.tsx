@@ -2,6 +2,7 @@ import React from "react";
 import "./scss/First.scss";
 import Logo from "../Common/Image/shortFLIX.png";
 import Intro_Graph from "../Common/Image/Intro_Graph.png";
+import Button from "../Common/Button";
 import { Link } from "react-router-dom";
 
 export default function First() {
@@ -16,7 +17,7 @@ export default function First() {
           </p>
           <p>당신이 원하는 컨텐츠가 바로 이 곳에 있습니다.</p>
           <Link to="/test">
-            <button>Get Started</button>
+            <Button styles="btn-sm btn-red">Get Started</Button>
           </Link>
         </section>
         <section className="First__Image">

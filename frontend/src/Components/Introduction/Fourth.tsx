@@ -6,22 +6,25 @@ export default function Fourth() {
   return (
     <article className="Fourth__Container">
       <div className="Fourth__Contents">
-        <section className="Fourth__Text">
-          <h1 className="Fourth__Title">
-            재미난게 넘쳐나는 지금, <div>우리는 어떻게 즐겨야 할까?</div>
-          </h1>
-          <p>
-            코로나가 발병한 이후, 우리는 외부에서의 자유를 잃게 됐지만 대신
-            새로운 가능성에 눈을 뜨게 됐습니다. 우리가 가지고 있는 수많은 스마트
-            기기들로 잃어버린 자유를 충족시킬 수 있다는 가능성 말이죠. 그리고
-            지금은 또 하나의 세상으로써 우리에게 없어서는 안될 존재가 되었죠.
-          </p>
-        </section>
         <img
           className="Fourth__Image"
           src={ShortFormContents}
           alt="ShortFormContents"
         />
+        <section className="Fourth__Text">
+          <h1 className="Fourth__Title">
+            재미난게 넘쳐나는 지금, <div>우리는 어떻게 즐겨야 할까?</div>
+          </h1>
+          <p>
+            컨텐츠의 인기가 높아지는만큼 다양하고 재미있는 새로운 작품들이 매일
+            쏟아져나오죠. 하지만 우리의 삶은 그 모든 것들을 즐기기엔 시간이
+            턱없이 부족합니다. 이런 시대의 흐름에 맞춰 틱톡, 유튜브 쇼츠,
+            인스타그램 쇼츠 등 짧은 시간동안 강렬하게 보여주는 이른바 숏폼
+            컨텐츠가 트렌드의 한 축으로 자리잡았습니다. 이런 트렌드에 맞춰 저희
+            또한 긴 시간동안 시청하는 영화나 드라마를 짧게 압축한 리뷰 컨텐츠를
+            추천해드리려 합니다.
+          </p>
+        </section>
       </div>
     </article>
   );

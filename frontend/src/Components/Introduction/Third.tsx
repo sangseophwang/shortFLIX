@@ -1,13 +1,13 @@
 import React from "react";
 import "./scss/Third.scss";
-import Graph_Test from "../Common/Image/Graph_Test.png";
+import Introduction_Image_2 from "../Common/Image/Introduction_Image_2.png";
 import { Link } from "react-router-dom";
 
 export default function Third() {
   return (
     <article className="Third__Container">
       <div className="Third__Contents">
-        <img className="Third__Image" src={Graph_Test} alt="Graph" />
+        <img className="Third__Image" src={Introduction_Image_2} alt="Image" />
         <section className="Third__Text">
           <h1 className="Third__Title">
             그리고 새로운 세상은 우리를 중심으로 바뀌고 있습니다.
