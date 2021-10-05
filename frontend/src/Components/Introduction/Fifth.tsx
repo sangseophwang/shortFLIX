@@ -1,6 +1,7 @@
 import React from "react";
 import "./scss/Fifth.scss";
 import Logo from "../Common/Image/shortFLIX.png";
+import Button from "../Common/Button";
 import { Link } from "react-router-dom";
 
 export default function Fifth() {
@@ -10,7 +11,7 @@ export default function Fifth() {
         <img className="Fifth__Image" src={Logo} alt="Logo" />
         <p>지금 시작합니다!</p>
         <Link to="/test">
-          <button>Get Started</button>
+          <Button styles="btn-sm btn-red">Get Started</Button>
         </Link>
       </section>
     </article>

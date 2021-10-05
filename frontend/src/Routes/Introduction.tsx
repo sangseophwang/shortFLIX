@@ -5,6 +5,7 @@ import Second from "../Components/Introduction/Second";
 import Third from "../Components/Introduction/Third";
 import Fourth from "../Components/Introduction/Fourth";
 import Fifth from "../Components/Introduction/Fifth";
+import BackToTop from "../Components/Common/BackToTop";
 
 const Introduction = () => {
   return (
@@ -14,6 +15,7 @@ const Introduction = () => {
       <Third />
       <Fourth />
       <Fifth />
+      <BackToTop />
     </main>
   );
 };

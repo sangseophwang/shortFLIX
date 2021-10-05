@@ -1,11 +1,12 @@
 import React from "react";
+import Second_Layout from "../Components/Report/Second_Layout";
 
-const Report = () => {
+const Report_Second = () => {
   return (
-    <div>
-      <h1>Report2</h1>
-    </div>
+    <main>
+      <Second_Layout />
+    </main>
   );
 };
 
-export default Report;
+export default Report_Second;

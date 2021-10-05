@@ -2,29 +2,25 @@
 
 .Second__Container {
   @include Container_Form();
-  flex-direction: column;
   .Second__Contents {
     @include Contents_Horizontal_Form();
-    .Second__Title {
-      font-size: 5rem;
-      font-weight: 700;
-      margin-bottom: 80px;
-    }
-    .Second__Article {
-      display: flex;
-      .Second__Text {
-        @include Introduction_Textbox();
-        > p {
-          opacity: 0.5;
-          width: 70%;
-        }
-        > a > button {
-          @include Report_Button();
-        }
+    .Second__Text {
+      @include Introduction_Textbox();
+      .Second__Title {
+        text-align: center;
+        font-size: 2.55em;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+      > p {
+        opacity: 0.5;
+      }
+      > a > button {
+        @include Report_Button();
       }
     }
     .Second__Image {
-      width: 50%;
+      width: 45%;
     }
   }
 }

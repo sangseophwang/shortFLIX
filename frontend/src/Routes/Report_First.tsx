@@ -1,11 +1,12 @@
 import React from "react";
+import First_Layout from "../Components/Report/First_Layout";
 
-const Report = () => {
+const Report_First = () => {
   return (
-    <div>
-      <h1>Report1</h1>
-    </div>
+    <main>
+      <First_Layout />
+    </main>
   );
 };
 
-export default Report;
+export default Report_First;

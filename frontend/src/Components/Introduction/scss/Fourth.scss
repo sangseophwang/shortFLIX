@@ -3,21 +3,23 @@
 .Fourth__Container {
   @include Container_Form();
   .Fourth__Contents {
-    @include Contents_Vertical_Form();
+    @include Contents_Horizontal_Form();
     .Fourth__Text {
       @include Introduction_Textbox();
+
       .Fourth__Title {
-        font-size: 3.1rem;
+        text-align: center;
+        font-size: 3rem;
         font-weight: 700;
         margin-bottom: 60px;
       }
       > p {
         opacity: 0.5;
-        width: 80%;
       }
     }
     .Fourth__Image {
-      width: 38%;
+      width: 26%;
+      margin-left: 100px;
     }
   }
 }
