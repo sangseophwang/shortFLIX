@@ -1,0 +1,25 @@
+@import "../../Common/scss/_mixins.scss";
+
+.Fourth__Container {
+  @include Container_Form();
+  .Fourth__Contents {
+    @include Contents_Horizontal_Form();
+    .Fourth__Text {
+      @include Introduction_Textbox();
+
+      .Fourth__Title {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+      > p {
+        opacity: 0.5;
+      }
+    }
+    .Fourth__Image {
+      width: 26%;
+      margin-left: 100px;
+    }
+  }
+}

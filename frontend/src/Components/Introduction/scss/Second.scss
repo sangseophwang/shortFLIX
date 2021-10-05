@@ -1,0 +1,26 @@
+@import "../../Common/scss/_mixins.scss";
+
+.Second__Container {
+  @include Container_Form();
+  .Second__Contents {
+    @include Contents_Horizontal_Form();
+    .Second__Text {
+      @include Introduction_Textbox();
+      .Second__Title {
+        text-align: center;
+        font-size: 2.55em;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+      > p {
+        opacity: 0.5;
+      }
+      > a > button {
+        @include Report_Button();
+      }
+    }
+    .Second__Image {
+      width: 45%;
+    }
+  }
+}
