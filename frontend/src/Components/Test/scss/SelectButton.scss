@@ -1,0 +1,43 @@
+@import "../../Common/scss/variables";
+
+.selectButton {
+  width: 280px;
+  height: 150px;
+  background-color: $big-button-color;
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 3px 20px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  &:hover {
+    background-color: #323443;
+    transition: 0.5s ease;
+  }
+
+  > div {
+    text-align: left;
+    line-height: 1.5rem;
+
+    .buttonTitle {
+      font-weight: 700;
+    }
+
+    .buttonDesc {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      line-height: 1.2rem;
+      margin-top: 0.5rem;
+      color: #efede8;
+      div {
+        padding-right: 1rem;
+      }
+      img {
+        width: 28px;
+        height: 24px;
+        margin: auto 0;
+      }
+    }
+  }
+}
