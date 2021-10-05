@@ -1,0 +1,49 @@
+@mixin Container_Form {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin Contents_Vertical_Form {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin Contents_Horizontal_Form {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin Introduction_Textbox {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  line-height: 1.7;
+}
+
+@mixin Report_Button {
+  margin-top: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: #3896f4;
+  background: none;
+  cursor: pointer;
+}
+
+@mixin Report_Background {
+  background-color: $Gray;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
