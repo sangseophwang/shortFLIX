@@ -1,6 +1,5 @@
 @import "../../Common/scss/mixins";
-
-$Gray: #202225;
+@import "../../Common//scss/variables";
 
 .Report__Container {
   width: 98%;
@@ -12,7 +11,7 @@ $Gray: #202225;
   .Report-First__Sidebar {
     display: grid;
     justify-items: center;
-    background-color: $Gray;
+    background-color: $report-background;
     grid-row: span 5;
     > a {
       height: 30px;
@@ -46,7 +45,7 @@ $Gray: #202225;
     grid-column: span 3;
     align-self: center;
     > h1 {
-      font-size: 60px;
+      font-size: 55px;
       font-weight: 700;
     }
   }
@@ -57,6 +56,7 @@ $Gray: #202225;
   .Report-First__Chart {
     grid-column: span 1;
     @include Report_Background();
+    padding: 30px;
   }
   .Report-First__Source {
     grid-column: span 2;

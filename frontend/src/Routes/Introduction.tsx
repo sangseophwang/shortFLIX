@@ -6,6 +6,7 @@ import Third from "../Components/Introduction/Third";
 import Fourth from "../Components/Introduction/Fourth";
 import Fifth from "../Components/Introduction/Fifth";
 import BackToTop from "../Components/Common/BackToTop";
+import GoBack from "../Components/Common/GoBack";
 
 const Introduction = () => {
   return (
@@ -16,6 +17,7 @@ const Introduction = () => {
       <Fourth />
       <Fifth />
       <BackToTop />
+      <GoBack />
     </main>
   );
 };
