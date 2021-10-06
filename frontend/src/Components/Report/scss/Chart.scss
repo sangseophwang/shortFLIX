@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  > th {
+    font-size: 25px;
+  }
+  > th,
+  td {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin: auto;
+    vertical-align: middle;
+  }
+  > tr {
+    &:nth-child(2n) {
+      background-color: #26282b;
+    }
+    > td {
+      font-size: 5px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.Mypage__Container {
+  width: 100%;
+  height: 100vh;
+  .Mypage__Grid {
+    margin-left: 50px;
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    > section {
+      background-color: teal;
+    }
+  }
+}

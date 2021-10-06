@@ -1,6 +1,8 @@
 import React from "react";
 import "./scss/First_Layout.scss";
 import Logo from "../Common/Image/shortFLIX.png";
+import First_Chart1 from "./First_Chart1";
+import First_Chart2 from "./First_Chart2";
 import { Link } from "react-router-dom";
 
 const First_Layout = () => {
@@ -29,8 +31,12 @@ const First_Layout = () => {
       <article className="Report-First__Graph">
         <h2>OTT 서비스별 이용률</h2>
       </article>
-      <article className="Report-First__Chart">차트</article>
-      <article className="Report-First__Chart">차트</article>
+      <article className="Report-First__Chart">
+        <First_Chart1 />
+      </article>
+      <article className="Report-First__Chart">
+        <First_Chart2 />
+      </article>
       <article className="Report-First__Source">
         <h3>출처 : 미디어통계포털 2019, 2020 방송매체이용행태조사</h3>
       </article>
