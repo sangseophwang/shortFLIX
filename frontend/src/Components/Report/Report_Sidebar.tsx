@@ -9,12 +9,20 @@ const Report_Sidebar = () => {
       <Link to="/">
         <img src={Logo} alt="Logo" />
       </Link>
-      <Link to="/report/1">
-        <button>Report_1</button>
-      </Link>
-      <Link to="/report/2">
-        <button>Report_2</button>
-      </Link>
+      <button
+        onClick={() => {
+          window.location.replace("/report/1");
+        }}
+      >
+        Report_1
+      </button>
+      <button
+        onClick={() => {
+          window.location.replace("/report/2");
+        }}
+      >
+        Report_2
+      </button>
       <Link to="/introduction">
         <button className="GoBack">{"<"} 돌아가기</button>
       </Link>
