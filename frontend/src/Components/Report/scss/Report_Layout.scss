@@ -1,0 +1,36 @@
+@import "../../Common/scss/mixins";
+@import "../../Common//scss/variables";
+
+.Report__Container {
+  width: 98%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.25fr repeat(2, 1fr) 0.8fr;
+  grid-template-rows: 0.6fr repeat(2, 1.5fr) 0.5fr 0.1fr;
+  gap: 20px;
+  .Report__Chart {
+    grid-column: span 1;
+    @include Report_Background();
+    padding: 30px;
+  }
+  .Report__Insight {
+    grid-column: 4;
+    grid-row: 2/ 5;
+    @include Report_Background();
+    display: grid;
+    justify-items: center;
+    > h3 {
+      margin-top: 50px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    > p {
+      opacity: 0.8;
+      line-height: 1.5;
+      width: 75%;
+      > span {
+        color: tomato;
+      }
+    }
+  }
+}

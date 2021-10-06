@@ -1,5 +1,5 @@
 import React from "react";
-import "./scss/Chart.scss";
+import "./scss/Report_Chart.scss";
 
 const First_Chart1 = () => {
   return (
