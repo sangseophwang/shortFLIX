@@ -1,0 +1,17 @@
+@import "../../Common/scss/_mixins.scss";
+
+.Fifth__Container {
+  @include Container_Form();
+  .Fifth__Contents {
+    @include Contents_Horizontal_Form();
+    .Fifth__Image {
+      width: 40%;
+      margin-bottom: 40px;
+    }
+    > p {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+  }
+}
