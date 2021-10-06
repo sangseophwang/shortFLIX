@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, request, url_for, redirect, f
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from authlib.integrations.flask_client import OAuth
-# from app import create_app
+from model.models import *
 
 class GoogleLogin:
 
@@ -32,5 +32,18 @@ class GoogleLogin:
         google = self.oauth.create_client('google')
         token = google.authorize_access_token()
         resp = google.get('userinfo').json()
-        print(f"\n{resp}\n")
-        return resp
+        user_info = User.query.filter_by(email = resp['email']).first()
+        if user_info:
+            return '디비에 있음'
+        else:
+
+            query = User(resp['email'], resp['name'])
+            # query.preferences = resp
+            # query.likes_list = resp
+            # query.latest_reviews_list = resp
+
+            db.session.add(query)
+            db.session.commit()
+            db.session.close()
+            print(f"\n{resp}\n")
+            return resp
