@@ -1,10 +1,12 @@
 import React from "react";
-
+import Navigation from "../Components/Common/Navigation";
+import ResultContent from "../Components/Result/ResultContent";
 const Result = () => {
   return (
-    <div>
-      <h1>Result</h1>
-    </div>
+    <main className='Result__Container'>
+      <Navigation link={"mypage"} />
+      <ResultContent />
+    </main>
   );
 };
 
