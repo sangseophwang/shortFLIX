@@ -3,6 +3,7 @@ import SelectButton from "../Components/Test/SelectButton";
 import TestChoice from '../Components/Test/TestChoice';
 import GenreChoice from '../Components/Test/GenreChoice';
 import SearchChoice from "../Components/Test/SearchChoice";
+import Loading from "../Components/Test/Loading";
 
 
 
@@ -10,7 +11,7 @@ type TestProps = {
   match: any;
 }
 
-type page = '' | 'like' | 'dislike' | 'search' | 'randchoice' ; 
+type page = '' | 'like' | 'dislike' | 'search' | 'randchoice' | 'loading' ; 
 
 const Test = ({match}: TestProps) => {
   const [page, setPage] = useState('')
@@ -19,13 +20,13 @@ const Test = ({match}: TestProps) => {
   }, [])
   console.log(page)
   return (
-    <div id='Test'>    
+    <main id='Test'>    
       {page === '' && <TestChoice isRandom={false} />}
       {page === 'like' && <GenreChoice isLike={true} />}
       {page === 'dislike' && <GenreChoice isLike={false} />}
       {page === 'search' && <SearchChoice />}
       {page === 'randchoice' && <TestChoice isRandom={true}/>}
-    </div>
+    </main>
   );
 };
 
