@@ -1,0 +1,22 @@
+@import "../../Common/scss/mixins";
+
+.Report__Insight {
+  grid-column: 4;
+  grid-row: 2/ 5;
+  @include Report_Background();
+  display: grid;
+  justify-items: center;
+  > h3 {
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  > p {
+    opacity: 0.8;
+    line-height: 1.5;
+    width: 75%;
+    > span {
+      color: tomato;
+    }
+  }
+}
