@@ -11,16 +11,16 @@ type TestProps = {
   match: any;
 }
 
-type page = '' | 'like' | 'dislike' | 'search' | 'randchoice' | 'loading' ; 
+type Page = '' | 'like' | 'dislike' | 'search' | 'randchoice' | 'loading' ; 
 
 const Test = ({match}: TestProps) => {
-  const [page, setPage] = useState('')
+  const [page, setPage] = useState<Page>('')
   useEffect(() => {
     setPage(match.params.detail || '')
   }, [])
   console.log(page)
   return (
-    <main id='Test'>    
+    <main id='Test__Container'>    
       {page === '' && <TestChoice isRandom={false} />}
       {page === 'like' && <GenreChoice isLike={true} />}
       {page === 'dislike' && <GenreChoice isLike={false} />}
