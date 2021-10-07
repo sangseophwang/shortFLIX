@@ -1,0 +1,13 @@
+@import "../../Common/scss/mixins";
+@import "../../Common//scss/variables";
+
+.Report__Source {
+  grid-column: span 2;
+  @include Report_Background();
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  > h3 {
+    opacity: 0.7;
+  }
+}

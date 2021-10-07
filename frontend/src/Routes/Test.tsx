@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import SelectButton from "../Components/Test/SelectButton";
+import TestChoice from '../Components/Test/TestChoice';
+import GenreChoice from '../Components/Test/GenreChoice';
+import SearchChoice from "../Components/Test/SearchChoice";
+import Loading from "../Components/Test/Loading";
 
-const Test = () => {
+
+
+type TestProps = {
+  match: any;
+}
+
+type Page = '' | 'like' | 'dislike' | 'search' | 'randchoice' | 'loading' ; 
+
+const Test = ({match}: TestProps) => {
+  const [page, setPage] = useState<Page>('')
+  useEffect(() => {
+    setPage(match.params.detail || '')
+  }, [])
+  console.log(page)
   return (
-    <div>
-      <h1>Test</h1>
-    </div>
+    <main id='Test__Container'>    
+      {page === '' && <TestChoice isRandom={false} />}
+      {page === 'like' && <GenreChoice isLike={true} />}
+      {page === 'dislike' && <GenreChoice isLike={false} />}
+      {page === 'search' && <SearchChoice />}
+      {page === 'randchoice' && <TestChoice isRandom={true}/>}
+    </main>
   );
 };
 
