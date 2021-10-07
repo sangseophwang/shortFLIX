@@ -1,0 +1,95 @@
+#WatchVideoContent {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+
+  .backToList {
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 2rem;
+    cursor: pointer;
+    img {
+      margin-right: 10px;
+      width: 1.5rem;
+    }
+  }
+
+  .videoDetail {
+    display: flex;
+    margin: 30px 0;
+    .videoPoster {
+      margin-right: 50px;
+      height: 300px;
+    }
+    .videoDesc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      line-height: 1.5rem;
+
+      .videoTitle {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .starRating {
+        margin-right: 5px;
+        img {
+          height: 15px;
+          margin: 2px 2px 0;
+        }
+      }
+
+      .hearts {
+        display: flex;
+        height: 30px;
+        .heartImg {
+          width: 30px;
+          margin-right: 10px;
+        }
+        span {
+          font-size: 1.5rem;
+          line-height: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .youtubeSection {
+    position: relative;
+    overflow: hidden;
+    .reviewTitle {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      text-align: left;
+    }
+    .arrow {
+      position: absolute;
+      bottom: 120px;
+      cursor: pointer;
+      &:hover {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        transition: 0.5s ease;
+      }
+    }
+    .arrowRight {
+      right: 0;
+    }
+    .arrowLeft {
+      width: 103px;
+      left: 0;
+    }
+    .youtubeVideos {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      overflow: hidden;
+      height: 350px;
+      transition: 1s ease;
+    }
+  }
+}
