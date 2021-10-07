@@ -1,0 +1,8 @@
+.Report__Title {
+  grid-column: span 3;
+  align-self: center;
+  > h1 {
+    font-size: 55px;
+    font-weight: 700;
+  }
+}

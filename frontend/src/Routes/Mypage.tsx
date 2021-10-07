@@ -1,10 +1,11 @@
 import React from "react";
+import Mypage_Layout from "../Components/Mypage/Mypage_Layout";
 
 const MyPage = () => {
   return (
-    <div>
-      <h1>MyPage</h1>
-    </div>
+    <main>
+      <Mypage_Layout />
+    </main>
   );
 };
 

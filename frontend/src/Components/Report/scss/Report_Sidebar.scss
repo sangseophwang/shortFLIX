@@ -1,0 +1,38 @@
+@import "../../Common//scss/variables";
+
+.Report__Sidebar {
+  display: grid;
+  justify-items: center;
+  background-color: $report-background;
+  grid-row: span 5;
+  > a {
+    height: 30px;
+    > img {
+      width: 80%;
+      margin: 50px 0 100px 10px;
+    }
+    .GoBack {
+      margin-top: 80px;
+      color: tomato;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      background: none;
+      font-size: 18px;
+    }
+  }
+  > button {
+    border: none;
+    cursor: pointer;
+    opacity: 0.6;
+    background: none;
+    font-weight: 300;
+    font-size: 18px;
+    transition: 0.5s;
+    color: white;
+    &:hover {
+      transition: 0.5s;
+      opacity: 1;
+    }
+  }
+}
