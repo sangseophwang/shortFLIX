@@ -1,0 +1,11 @@
+@import "../../Common/scss/variables";
+
+.infoText {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 70px;
+  span {
+    color: $selected-color;
+  }
+}

@@ -8,16 +8,19 @@ import Report from "../Routes/Report";
 import Result from "../Routes/Result";
 import Test from "../Routes/Test";
 import WatchVideo from "../Routes/WatchVideo";
+import SignUp from "../Routes/SignUp";
 
 const AppRouter = () => {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/mypage" component={MyPage} />
         <Route exact path="/introduction" component={Introduction} />
+        <Route exact path='/test' component={Test} />
+        <Route path="/test/:detail" component={Test} />
         <Route path="/report/:id" component={Report} />
-        <Route exact path="/test" component={Test} />
         <Route exact path="/result" component={Result} />
         <Route exact path="/watchvideo" component={WatchVideo} />
       </Switch>
