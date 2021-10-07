@@ -32,16 +32,20 @@ export default function GenreChoice({ isLike }: GenreChoiceProps) {
         {id: 17, kor: '스포츠', eng: 'Sport'},
         {id: 18, kor: '애니메이션', eng: 'Animation'},
     ]
-    // 저스트워치 크롤링 결과 보고 적어보는 리스트: 액션, 드라마, 스릴러, 전쟁, 범죄, 코미디, 로맨스, 공포, 판타지, 애니메이션, Made in Europe, 다큐멘터리, SF, 가족, 리얼리티, 음악, 서부
+
+    const handleNext = () => {
+        if (isLike) window.location.replace('/test/dislike')
+        else window.location.replace('/test/search')
+    }
+    
     return (
         <div id='GenreChoice'>
             <InfoText>{isLike ? '좋아' : '싫어'}하는 장르를 선택해주세요.</InfoText>
             <div className='genreBox'>
                 {genres.map((item) => <GenreInput isChecked={false} key={`genre-${item.id}`} id={item.id} desc={item.eng}>{item.kor}</GenreInput>)}
             </div>
-            {/* TODO: 페이지 상태에 따라 버튼 링크 다르게 */}
-            {!isLike && <Button styles='btn-md'>이전</Button>}
-            <Button styles='btn-md'>다음</Button>
+            {!isLike && <Button styles='btn-md' onClick={()=>window.location.replace('/test/like')}>이전</Button>}
+            <Button styles='btn-md' onClick={handleNext}>다음</Button>
         </div>
     )
 }
