@@ -9,7 +9,7 @@ import "./scss/Home.scss";
 const Home = () => {
   return (
     <main className="Home__Container">
-      <Navigation link={"logout"} />
+      <Navigation link={"mypage"} />
       <MainVideo />
       <Summary />
       <Bottom />
