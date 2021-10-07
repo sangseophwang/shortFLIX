@@ -11,18 +11,20 @@ def create_app():
   app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/reviews_db" 
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
   app.config['SECRET_KEY'] = "dev1234"
-
+  app.config['JSON_AS_ASCII'] = False
+  
   db.init_app(app)
   migrate = Migrate(app, db)
   migrate.init_app(app, db)
   
   from model import models
 
-  from view import login_route
+  from view import login_route, content_route
   app.register_blueprint(login_route.bp)
+  app.register_blueprint(content_route.bp)
   
 
   return app
 
 if __name__=="__main__":
-  create_app().run()
+  create_app().run(debug=True)
