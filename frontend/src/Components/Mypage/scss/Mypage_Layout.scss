@@ -5,10 +5,17 @@
     display: grid;
     height: 90vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr repeat(3, 1fr);
-    font-size: 40px;
-    font-weight: 700;
+    grid-template-rows: 0.2fr 0.5fr repeat(2, 1fr);
+    font-size: 25px;
+    font-weight: 500;
     > section {
+      &:first-child {
+        margin-top: -10px;
+      }
+      &:last-child {
+        margin-top: -10px;
+      }
+      margin-top: 10px;
       padding-left: 20px;
     }
   }
