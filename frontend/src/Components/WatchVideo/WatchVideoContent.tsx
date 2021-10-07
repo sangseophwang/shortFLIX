@@ -61,7 +61,7 @@ export default function WatchVideoContent( { videoDetail, setPage }: WatchVideoC
                 <div className='reviewTitle'>리뷰 영상</div>
                 
                 <div className='youtubeVideos' style={{marginLeft:`-${412 * videoNum}px`}}>
-                    {videoDetail.youtubes.map(item => <YoutubeThumbnail key={item.id} time={item.time} image={item.img} url={item.url} onClick={()=>setPage('youtube')} />)}
+                    {videoDetail.youtubes.map((item: any) => <YoutubeThumbnail key={item.id} time={item.time} image={item.img} url={item.url} onClick={()=>setPage('youtube')} />)}
                 </div>
                 {videoDetail.youtubes.length >2 && videoNum < videoDetail.youtubes.length -2 && <img className='arrow arrowRight' src={chevron_big_right} alt='arrow right' onClick={()=> setVideoNum(videoNum+1)} />}
                 {videoNum >=1 && <img className='arrow arrowLeft' src={chevron_big_left} alt='arrow left' onClick={()=> setVideoNum(videoNum-1)} />}

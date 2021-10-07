@@ -3,6 +3,7 @@ import React from 'react'
 import InfoText from '../Common/InfoText';
 import MovieItem from './MovieItem';
 import Button from '../Common/Button';
+import { useHistory } from 'react-router';
 
 // Dummy Data
 const movies = [
@@ -17,9 +18,9 @@ const movies = [
 ]
 
 export default function ResultContent() {
+    const history = useHistory()
     const handleRedo = () => {
-        alert('설문 페이지로 이동..')
-        // TODO: /test로 보내기
+        history.push('/test')
     }
 
     const handleRecommendation = () => {

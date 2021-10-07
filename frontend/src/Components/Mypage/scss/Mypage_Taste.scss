@@ -1,0 +1,10 @@
+.Mypage__Taste {
+  > button {
+    margin-right: 10px;
+    transition: 0.5s;
+    &:hover {
+      background-color: tomato;
+      transition: 0.5s;
+    }
+  }
+}

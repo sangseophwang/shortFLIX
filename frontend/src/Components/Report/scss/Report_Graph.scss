@@ -1,0 +1,7 @@
+@import "../../Common/scss/mixins";
+@import "../../Common//scss/variables";
+
+.Report__Graph {
+  grid-column: span 1;
+  @include Report_Background();
+}
