@@ -3,5 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from authlib.integrations.flask_client import OAuth
 from view import create_app
+from flask_cors import CORS
 
-create_app()
+
+app = create_app()
+CORS(app)
+
+if __name__=="__main__":
+  app.run(host="0.0.0.0", port=80, debug=True)

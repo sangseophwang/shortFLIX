@@ -12,7 +12,6 @@ class GetContents:
         contents_dict = {}
         contents_list = []
         for item in contents:
-            contents_dict['data'] = contents_list
             contents_list.append({
                 'id' : item.id,
                 'thumbnail' : item.thumbnail,
@@ -22,5 +21,6 @@ class GetContents:
                 'running_time' : item.running_time,
                 'synop' : item.synop
                 })
-
+                
+        contents_dict['data'] = contents_list
         return jsonify(contents_dict)
