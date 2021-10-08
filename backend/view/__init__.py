@@ -2,12 +2,14 @@ from flask import Flask, render_template, session, request, url_for, redirect, f
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from authlib.integrations.flask_client import OAuth
+from flask_cors import CORS
 
 db = SQLAlchemy()
 
 def create_app():
   #Flask 객체 인스턴스 생성
   app = Flask(__name__)
+  CORS(app)
   app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/reviews_db" 
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
   app.config['SECRET_KEY'] = "dev1234"
@@ -25,6 +27,3 @@ def create_app():
   app.register_blueprint(random_route.bp)
 
   return app
-
-if __name__=="__main__":
-  create_app().run(debug=True)
