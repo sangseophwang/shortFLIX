@@ -19,10 +19,10 @@ def create_app():
   
   from model import models
 
-  from view import login_route, content_route
+  from view import login_route, content_route, random_route
   app.register_blueprint(login_route.bp)
   app.register_blueprint(content_route.bp)
-  
+  app.register_blueprint(random_route.bp)
 
   return app
 
