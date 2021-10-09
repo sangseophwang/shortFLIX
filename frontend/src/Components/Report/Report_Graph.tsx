@@ -1,5 +1,7 @@
 import React from "react";
 import "./scss/Report_Graph.scss";
+import graph1 from "../Common/Image/graph1.png";
+import graph2 from "../Common/Image/graph2.png";
 
 type GraphSelectProps = {
   id: string;
@@ -10,22 +12,22 @@ const Report_Graph = ({ id }: GraphSelectProps) => {
     <>
       {id === "graph1" && (
         <article className="Report__Graph">
-          <h2>graph1</h2>
+          <img src={graph1} alt="" />
         </article>
       )}
       {id === "graph2" && (
         <article className="Report__Graph">
-          <h2>graph2</h2>
+          <img src={graph2} alt="" />
         </article>
       )}
       {id === "graph3" && (
         <article className="Report__Graph">
-          <h2>graph3</h2>
+          <img src={graph2} alt="" />
         </article>
       )}
       {id === "graph4" && (
         <article className="Report__Graph">
-          <h2>graph4</h2>
+          <img src={graph1} alt="" />
         </article>
       )}
     </>
