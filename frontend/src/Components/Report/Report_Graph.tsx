@@ -1,7 +1,7 @@
 import React from "react";
 import "./scss/Report_Graph.scss";
-import graph1 from "../Common/Image/graph1.png";
-import graph2 from "../Common/Image/graph2.png";
+import graph1 from "../Assets/Image/graph1.png";
+import graph2 from "../Assets/Image/graph2.png";
 
 type GraphSelectProps = {
   id: string;

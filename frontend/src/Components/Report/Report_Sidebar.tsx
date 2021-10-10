@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Report_Sidebar.scss";
-import Logo from "../Common/Image/shortFLIX.png";
+import Logo from "../Assets/Image/shortFLIX.png";
 import { Link } from "react-router-dom";
 
 const Report_Sidebar = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Third.scss";
-import Introduction_Image_2 from "../Common/Image/Introduction_Image_2.png";
+import Introduction_Image_2 from "../Assets/Image/Introduction_Image_2.png";
 import { Link } from "react-router-dom";
 
 export default function Third() {

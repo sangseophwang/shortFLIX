@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Fifth.scss";
-import Logo from "../Common/Image/shortFLIX.png";
+import Logo from "../Assets/Image/shortFLIX.png";
 import Button from "../Common/Button";
 import { Link } from "react-router-dom";
 

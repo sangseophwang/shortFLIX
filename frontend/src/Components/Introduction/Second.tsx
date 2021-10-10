@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Second.scss";
-import Introduction_Image_1 from "../Common/Image/Introduction_Image_1.png";
+import Introduction_Image_1 from "../Assets/Image/Introduction_Image_1.png";
 import { Link } from "react-router-dom";
 
 export default function Second() {
