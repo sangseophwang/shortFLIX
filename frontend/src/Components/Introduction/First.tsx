@@ -1,7 +1,7 @@
 import React from "react";
 import "./scss/First.scss";
-import Logo from "../Common/Image/shortFLIX.png";
-import Intro_Graph from "../Common/Image/Intro_Graph.png";
+import Logo from "../Assets/Image/shortFLIX.png";
+import Intro_Graph from "../Assets/Image/Intro_Graph.png";
 import Button from "../Common/Button";
 import { Link } from "react-router-dom";
 

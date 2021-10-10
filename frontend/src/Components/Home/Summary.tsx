@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Summary.scss";
-import Image from "../Common/Image/Summary.png";
+import Image from "../Assets/Image/Summary.png";
 
 export default function Summary() {
   return (
