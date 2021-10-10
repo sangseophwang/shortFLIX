@@ -1,7 +1,4 @@
-from flask import Flask, render_template, session, request, url_for, redirect, flash, jsonify, Blueprint
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from authlib.integrations.flask_client import OAuth
+from flask import Blueprint
 from service.get_content import GetContents
 
 bp = Blueprint('contents',__name__)

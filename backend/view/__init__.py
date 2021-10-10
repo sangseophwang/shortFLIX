@@ -1,7 +1,6 @@
-from flask import Flask, render_template, session, request, url_for, redirect, flash, jsonify
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from authlib.integrations.flask_client import OAuth
 from flask_cors import CORS
 
 db = SQLAlchemy()

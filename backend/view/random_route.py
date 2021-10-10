@@ -1,7 +1,5 @@
-from flask import Flask, render_template, session, request, url_for, redirect, flash, jsonify, Blueprint
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from authlib.integrations.flask_client import OAuth
+from flask import Blueprint
+
 from service.rand_recommend import RandRecommend
 
 bp = Blueprint('random',__name__)

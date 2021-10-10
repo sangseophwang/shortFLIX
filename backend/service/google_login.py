@@ -1,27 +1,26 @@
-from flask import Flask, render_template, session, request, url_for, redirect, flash, jsonify, Blueprint
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from flask import Flask, url_for
 from authlib.integrations.flask_client import OAuth
 from model.models import *
 
 class GoogleLogin:
-
-    app = Flask(__name__)
-    oauth = OAuth(app)
-    app.config['GOOGLE_CLIENT_ID'] = "5929487668-clkq5dmc730psab18leaflnb86eakoog.apps.googleusercontent.com"
-    app.config['GOOGLE_CLIENT_SECRET'] = "FmKr86bAntiYJI7z2HDoFvKr"
-    google = oauth.register(
-    name = 'google',
-    client_id = app.config["GOOGLE_CLIENT_ID"],
-    client_secret = app.config["GOOGLE_CLIENT_SECRET"],
-    access_token_url = 'https://accounts.google.com/o/oauth2/token',
-    access_token_params = None,
-    authorize_url = 'https://accounts.google.com/o/oauth2/auth',
-    authorize_params = None,
-    api_base_url = 'https://www.googleapis.com/oauth2/v1/',
-    userinfo_endpoint = 'https://openidconnect.googleapis.com/v1/userinfo',  # This is only needed if using openId to fetch user info
-    client_kwargs = {'scope': 'openid email profile'},
-    )
+    
+    def __init__(self):
+        self.app = Flask(__name__)
+        self.oauth = OAuth(self.app)
+        self.app.config['GOOGLE_CLIENT_ID'] = "5929487668-clkq5dmc730psab18leaflnb86eakoog.apps.googleusercontent.com"
+        self.app.config['GOOGLE_CLIENT_SECRET'] = "FmKr86bAntiYJI7z2HDoFvKr"
+        self.google = self.oauth.register(
+        name = 'google',
+        client_id = self.app.config["GOOGLE_CLIENT_ID"],
+        client_secret = self.app.config["GOOGLE_CLIENT_SECRET"],
+        access_token_url = 'https://accounts.google.com/o/oauth2/token',
+        access_token_params = None,
+        authorize_url = 'https://accounts.google.com/o/oauth2/auth',
+        authorize_params = None,
+        api_base_url = 'https://www.googleapis.com/oauth2/v1/',
+        userinfo_endpoint = 'https://openidconnect.googleapis.com/v1/userinfo',  # This is only needed if using openId to fetch user info
+        client_kwargs = {'scope': 'openid email profile'},
+        )
 
     def login(self):
         google = self.oauth.create_client('google')
