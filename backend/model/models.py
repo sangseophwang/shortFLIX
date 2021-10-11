@@ -1,5 +1,5 @@
 # DB 관련 코드
-from view import db
+from route import db
 
 class User(db.Model):
     

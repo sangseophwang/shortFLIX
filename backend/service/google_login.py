@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, session
 from authlib.integrations.flask_client import OAuth
 from model.models import *
 
@@ -33,16 +33,14 @@ class GoogleLogin:
         resp = google.get('userinfo').json()
         user_info = User.query.filter_by(email = resp['email']).first()
         if user_info:
+            session['email'] = resp['email']
             return '디비에 있음'
         else:
 
             query = User(resp['email'], resp['name'])
-            # query.preferences = resp
-            # query.likes_list = resp
-            # query.latest_reviews_list = resp
-
             db.session.add(query)
             db.session.commit()
             db.session.close()
+            session['email'] = resp['email']
             print(f"\n{resp}\n")
             return resp

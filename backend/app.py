@@ -1,4 +1,4 @@
-from view import create_app
+from route import create_app
 
 
 app = create_app()
