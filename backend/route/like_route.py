@@ -6,3 +6,4 @@ bp = Blueprint('like_content',__name__)
 @bp.route('/like/<int:content_id>', methods=['GET'])
 def user_like(content_id):
   return like_contents(content_id)
+  
