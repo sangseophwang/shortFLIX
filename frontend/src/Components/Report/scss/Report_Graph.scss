@@ -4,4 +4,7 @@
 .Report__Graph {
   grid-column: span 1;
   @include Report_Background();
+  > img {
+    width: 100%;
+  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Summary_Bottom.scss";
-import WorldMap from "../Common/Image/WorldMap.png";
+import WorldMap from "../Assets/Image/WorldMap.png";
 
 export default function Summary() {
   return (
