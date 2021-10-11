@@ -1,7 +1,6 @@
-from flask import Flask, render_template, session, request, url_for, redirect, flash, jsonify
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from authlib.integrations.flask_client import OAuth
 from flask_cors import CORS
 
 db = SQLAlchemy()
@@ -21,9 +20,10 @@ def create_app():
   
   from model import models
 
-  from view import login_route, content_route, random_route
+  from route import login_route, content_route, random_route, like_route
   app.register_blueprint(login_route.bp)
   app.register_blueprint(content_route.bp)
   app.register_blueprint(random_route.bp)
+  app.register_blueprint(like_route.bp)
 
   return app
