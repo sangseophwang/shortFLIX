@@ -27,4 +27,5 @@ class Content(db.Model):
     genre = db.Column(db.Text(), nullable=True)
     running_time = db.Column(db.Text(), nullable=True)
     synop = db.Column(db.Text(), nullable=True)
+    like = db.Column(db.Integer, nullable=False)
 
