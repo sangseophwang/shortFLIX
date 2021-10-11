@@ -1,7 +1,7 @@
 from flask import jsonify
 from model.models import *
 
-def all_contents(self):
+def all_contents():
     content = Content()
     contents = content.query.all()
     contents_dict = {}
