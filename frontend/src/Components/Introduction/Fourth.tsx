@@ -1,6 +1,6 @@
 import React from "react";
 import "./scss/Fourth.scss";
-import ShortFormContents from "../Common/Image/ShortFormContents.png";
+import ShortFormContents from "../Assets/Image/ShortFormContents.png";
 
 export default function Fourth() {
   return (
