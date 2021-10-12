@@ -1,0 +1,13 @@
+@import "../../Common/scss/_variables.scss";
+
+#TestPage {
+  max-width: 1000px;
+  margin: 15vh auto;
+  text-align: center;
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -11,15 +11,16 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 80px;
+  width: 90%;
+  height: 70px;
   border: none;
   background-color: $button-color;
   color: white;
   border-radius: 15px;
   cursor: pointer;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
 
   .genreTitle {
     font-weight: 700;
