@@ -6,12 +6,13 @@ type GenreButtonProps = {
     desc: string;
     id: any;
     isChecked: boolean;
+    onChange?: any;
 }
 
-export default function GenreInput({children, desc, id, isChecked}: GenreButtonProps) {
+export default function GenreInput({children, desc, id, isChecked, onChange}: GenreButtonProps) { 
     return (
         <>        
-            <input type='checkbox' defaultChecked={isChecked} className='genreInput' id={id}/>
+            <input type='checkbox' defaultChecked={isChecked} className='genreInput' id={id} onChange={onChange}/>
             <label htmlFor={id} className='genreLabel'>
                 <div>
                     <div className='genreTitle'>

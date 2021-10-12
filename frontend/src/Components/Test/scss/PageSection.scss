@@ -1,0 +1,10 @@
+.genreBox {
+  width: 50%;
+  margin: auto;
+  overflow: scroll;
+  height: 40vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
