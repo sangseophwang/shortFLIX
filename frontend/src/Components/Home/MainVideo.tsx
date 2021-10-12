@@ -16,7 +16,7 @@ export default function MainVideo() {
         </Link>
       </section>
 
-      <video muted autoPlay loop playsInline>
+      <video autoPlay muted loop playsInline>
         <source src={Background} type="video/mp4" />
       </video>
     </article>
