@@ -7,12 +7,6 @@ const Mypage_Title = () => {
   return (
     <section className="Mypage__Title">
       <h1>xxx님의 페이지</h1>
-      <Link to="/result">
-        <Button styles="btn-sm">결과 다시 보러가기</Button>
-      </Link>
-      <Link to="/test">
-        <Button styles="btn-sm">랜덤 추천받기</Button>
-      </Link>
     </section>
   );
 };
