@@ -4,6 +4,7 @@ import TestChoice from "../Components/Test/TestChoice";
 import GenreChoice from "../Components/Test/GenreChoice";
 import SearchChoice from "../Components/Test/SearchChoice";
 import Loading from "../Components/Test/Loading";
+import TestPage from "../Components/Test/TestPage";
 
 type TestProps = {
   match: any;
@@ -19,11 +20,7 @@ const Test = ({ match }: TestProps) => {
   console.log(page);
   return (
     <main id="Test__Container">
-      {page === "" && <TestChoice isRandom={false} />}
-      {page === "like" && <GenreChoice isLike={true} />}
-      {page === "dislike" && <GenreChoice isLike={false} />}
-      {page === "search" && <SearchChoice />}
-      {page === "randchoice" && <TestChoice isRandom={true} />}
+      <TestPage />
     </main>
   );
 };
