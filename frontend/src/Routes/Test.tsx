@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SelectButton from "../Components/Test/SelectButton";
-import TestChoice from "../Components/Test/TestChoice";
-import GenreChoice from "../Components/Test/GenreChoice";
-import SearchChoice from "../Components/Test/SearchChoice";
-import Loading from "../Components/Test/Loading";
 import TestPage from "../Components/Test/TestPage";
 
 type TestProps = {

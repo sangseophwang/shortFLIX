@@ -1,9 +1,7 @@
 import './scss/TestPage.scss'
 import React, { useState, useEffect } from 'react'
 import Button from '../Common/Button';
-import GenreInput from './GenreInput';
 import PageSection from './PageSection';
-import { stringify } from 'querystring';
 import Loading from './Loading';
 import { useHistory } from 'react-router';
 
