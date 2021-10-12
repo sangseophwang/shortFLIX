@@ -9,7 +9,7 @@ import Mypage_Recent from "./Mypage_Recent";
 const Mypage_Layout = () => {
   return (
     <article className="Mypage__Container">
-      <Navigation link={"mypage"} />
+      <Navigation />
       <div className="Mypage__Grid">
         <Mypage_Title />
         <Mypage_Taste />
