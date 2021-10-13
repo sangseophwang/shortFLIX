@@ -14,7 +14,10 @@ def all_contents():
             'rating' : item.rating,
             'genre' : item.genre.replace("'",""),
             'running_time' : item.running_time,
-            'synop' : item.synop
+            'synop' : item.synop,
+            'like':item.like,
+            'key_words' : item.key_words,
+            'year' : item.year
             })
     contents_dict['data'] = contents_list
     return jsonify(contents_dict)
