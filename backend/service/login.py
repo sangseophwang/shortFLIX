@@ -4,7 +4,7 @@ import bcrypt
 
 def login(request_data):       
     user_email = request_data['email']
-    user_pwd = request_data['pwd'].encode('utf-8')
+    user_pwd = request_data['password'].encode('utf-8')
     data = User.query.filter_by(email = user_email).first()
 
     if data is None:
@@ -13,7 +13,7 @@ def login(request_data):
         check_password = bcrypt.checkpw(user_pwd, data.pwd.encode('utf-8'))
         if check_password:
             session['login'] = data.email
-            return "로그인 성공"
+            return data.user_name
         else:
             return "비밀번호가 일치하지 않습니다"
     return None
