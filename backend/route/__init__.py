@@ -8,7 +8,7 @@ db = SQLAlchemy()
 def create_app():
   #Flask 객체 인스턴스 생성
   app = Flask(__name__)
-  CORS(app)
+  CORS(app, resources={r'*': {'origins': '*'}})
   app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/reviews_db" 
   app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
   app.config['SECRET_KEY'] = "dev1234"
