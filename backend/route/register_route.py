@@ -2,7 +2,7 @@ from flask import Blueprint
 
 from service.register_user import register_user
 
-bp = Blueprint('random',__name__)
+bp = Blueprint('register',__name__)
 
 # Default route
 @bp.route('/register', methods=['POST'])
