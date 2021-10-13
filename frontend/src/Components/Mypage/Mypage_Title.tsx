@@ -3,10 +3,14 @@ import "./scss/Mypage_Title.scss";
 import Button from "../Common/Button";
 import { Link } from "react-router-dom";
 
-const Mypage_Title = () => {
+type NameProps = {
+  name: any;
+};
+
+const Mypage_Title = ({ name }: NameProps) => {
   return (
     <section className="Mypage__Title">
-      <h1>xxx님의 페이지</h1>
+      <h1>{name}님의 페이지</h1>
     </section>
   );
 };
