@@ -20,12 +20,13 @@ def create_app():
   
   from model import models
 
-  from route import login_route, content_route, random_route, like_route, dislike_route
+  from route import login_route, content_route, random_route, like_route, dislike_route, register_route
   app.register_blueprint(login_route.bp)
   app.register_blueprint(content_route.bp)
   app.register_blueprint(random_route.bp)
   app.register_blueprint(like_route.bp)
   app.register_blueprint(dislike_route.bp)
+  app.register_blueprint(register_route.bp)
 
   
   return app
