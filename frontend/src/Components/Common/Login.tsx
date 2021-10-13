@@ -9,14 +9,17 @@ const clientId =
 const Login = () => {
   const [isLoggedin, setIsLoggedin] = useState<boolean>(false);
   const handleLogin = async (googleData: any) => {
-    const res = await fetch("/login/google", {
-      method: "POST",
-      body: JSON.stringify({ token: googleData.tokenID }),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+    const res = await fetch(
+      "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/login/google",
+      {
+        method: "POST",
+        body: JSON.stringify({ token: googleData.tokenID }),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
     setIsLoggedin(true);
     console.log(res.statusText);
   };
