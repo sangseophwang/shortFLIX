@@ -5,7 +5,7 @@
     display: grid;
     height: 90vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.5fr repeat(2, 1fr);
+    grid-template-rows: 0.3fr 0.5fr repeat(2, 1fr);
     font-size: 25px;
     font-weight: 500;
     > section {
@@ -17,6 +17,20 @@
       }
       margin-top: 10px;
       padding-left: 20px;
+    }
+    .Mypage__Header {
+      font-size: 30px;
+      display: flex;
+      padding-left: 20px;
+      > button {
+        color: tomato;
+        background: none;
+        cursor: pointer;
+        border: none;
+        line-height: 2;
+        margin: 8px 0 0 30px;
+        font-weight: 700;
+      }
     }
   }
 }
