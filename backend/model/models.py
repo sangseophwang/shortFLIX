@@ -7,8 +7,8 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(30), unique=True, nullable=False)
-    user_name = db.Column(db.String(30), nullable=False)
-    pwd = db.Column(db.String(30), nullable=True)
+    user_name = db.Column(db.String(50), nullable=False)
+    pwd = db.Column(db.String(80), nullable=True)
     preferences = db.Column(db.JSON, nullable=True)
     # 배열 형태로 insert해야함
     likes_list = db.Column(db.JSON, nullable=True)
@@ -30,4 +30,6 @@ class Content(db.Model):
     running_time = db.Column(db.Text(), nullable=True)
     synop = db.Column(db.Text(), nullable=True)
     like = db.Column(db.Integer, nullable=False)
+    key_words = db.Column(db.Text(), nullable=True)
+    year = db.Column(db.Integer, nullable=True)
 
