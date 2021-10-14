@@ -1,8 +1,8 @@
 from flask import jsonify, session
 from model.models import *
 
-def like_contents(content_id):
-    user = User.query.filter_by(email = session['email']).first()
+def like_contents(content_id, user_email):
+    user = User.query.filter_by(email = user_email).first()
     content = Content.query.filter_by(id = content_id).first()
 
     now = [] 
@@ -29,7 +29,7 @@ def like_contents(content_id):
                 for j in range(len(prev)):
                     if now[0]['id'] == prev[j]['id']:
                         # '/detail'로 리다이렉트 예정
-                        return 'False'
+                        return '이미 좋아합니다.'
                     
                 user.likes_list = prev + now
                 content.like += 1
@@ -41,4 +41,4 @@ def like_contents(content_id):
     db.session.close()
     
     # '/detail'로 리다이렉트 예정
-    return 'True'
+    return '좋아요 +1'
