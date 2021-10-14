@@ -18,7 +18,6 @@ def dislike_contents(content_id, user_email):
                     content.like -= 1
 
                 user.likes_list = now
-                # db.session.add(user)
                 db.session.commit() 
 
                 break
