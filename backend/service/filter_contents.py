@@ -37,7 +37,7 @@ def filter_content(request_data):
     movies['genre'] = movies['genre'].apply(lambda x: [i for i in list(x)]).apply(lambda x : ' '.join(x))
     movies['key_words'] = movies['key_words'].apply(literal_eval)
     movies['key_words'] = movies['key_words'].apply(lambda x: [i for i in list(x)]).apply(lambda x : ' '.join(x))
-    print(12345,result['contentType'])
+
     # 영화 종류
     movies = movies[movies['kind'].apply(lambda x : x in result['contentType'])]
     # for c in range(len(movies)):
