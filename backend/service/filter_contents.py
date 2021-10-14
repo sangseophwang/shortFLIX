@@ -11,11 +11,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 def filter_content(request_data):
-    # user_email = request_data['email']
-    # data = User.query.filter_by(email = user_email).first()
-    # result = data.preferences
-    # print(result)
-    # print(result['keyword'])
+    user_email = request_data['email']
+    data = User.query.filter_by(email = user_email).first()
+    result = data.preferences
+
     movies = pd.read_csv('justwatch_year.csv', encoding='cp949')
     result = request_data
     # running_time -> 시,분 계산
