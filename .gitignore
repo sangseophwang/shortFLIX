@@ -19,7 +19,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# build/
 develop-eggs/
 dist/
 downloads/
@@ -251,12 +251,14 @@ Temporary Items
 # Cython debug symbols
 
 ### react ###
+/node_modules
+/build
 .DS_*
 logs
 **/*.backup.*
 **/*.back.*
 
-node_modules
+
 bower_components
 
 *.sublime*

@@ -16,14 +16,14 @@ export default function ResultContent() {
     }
     useEffect(() => {
         if (location.state) {
-            setData(location.state)
+            setData(location.state.slice(0,8))
         } else {
             fetch('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/contents')
                 .then(res => res.json())
                 .then(res => res.data.slice(0,8))
                 .then((res:any) => {
                     setData(res)
-                    console.log(res)
+                    console.log('요청한 결과: ',res)
                 })
         }
         
@@ -31,7 +31,11 @@ export default function ResultContent() {
 
     const handleRecommendation = () => {
         alert('새로운 결과 요청중...')
-        // TODO: API 새로 요청. 단, 겹치지 않게.
+        const lastDataId = data[7]['id']
+        console.log(lastDataId)
+        // TODO: api 한 번 더 요청하고 slicing 하기 
+        // const prevIndex = data.findIndex(i => i['id']===lastDataId)
+        // setData(받은데이터.slice(prevIndex+1, prevIndex+8))
     }
     return (
         <div id='ResultContent'>

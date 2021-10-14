@@ -33,13 +33,12 @@ export default function WatchVideoContent({
   
   const youtubeInfo = videoDetail['youtubes'] ? videoDetail['youtubes'] : useYoutube(videoDetail.title)
 
-  
 
   return (
     <div id="WatchVideoContent">
       <div className="backToList" onClick={() => {
         const temp = [...videoAll]
-        if (youtubeInfo[0].link !== undefined) temp[videoDetail.id-1]['youtubes'] = youtubeInfo
+        if (youtubeInfo.length !== 0) temp[videoDetail.id-1]['youtubes'] = youtubeInfo
         history.push({
           pathname: "/result",
           state: temp
@@ -89,16 +88,19 @@ export default function WatchVideoContent({
           className="youtubeVideos"
           style={{ marginLeft: `-${412 * videoNum}px` }}
         >
-          {youtubeInfo && youtubeInfo.map((item: any) => (item.link !== undefined && 
+          {youtubeInfo.length > 0 ? (
+            youtubeInfo.map((item: any) => (item.link !== undefined && 
             <YoutubeThumbnail
               key={item.link}
               url={item.link}
               time={item.duration && getTime(item.duration)}
               onClick={() => {setPage("youtube"); setLink(item.link)}}
             />
-          ))}
+          ))): (
+          <span>유튜브에서 리뷰 영상 추천 받는 중...</span>)
+          }
         </div>
-        {videoNum < 3 && (
+        {videoNum < youtubeInfo.length-2 && (
             <img
               className="arrow arrowRight"
               src={chevron_big_right}

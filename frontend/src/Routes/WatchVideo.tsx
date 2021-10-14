@@ -16,7 +16,7 @@ const WatchVideo = ( {match}:any ) => {
   
   return (
     <main className='WatchVideo__Container'>
-      <Navigation link={'mypage'} />
+      <Navigation />
       { page === 'desc' && <WatchVideoContent videoDetail={location.state.cur} videoAll={location.state.whole} setPage={setPage} setLink={setLink} />}
       { page === 'youtube' && <WatchYoutube videoDetail={location.state.cur} setPage={setPage} link={link}/>}
     </main>

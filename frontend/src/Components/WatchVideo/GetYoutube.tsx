@@ -15,10 +15,16 @@ export default function useYoutube(title:any) {
     const searchVideo = async(title:string) => {
         const response: any = await youtube.get('/search', {
         params: {
-            q: `"${title}" 리뷰`
+            q: `${title} 리뷰`
         }
         })
-        .then((res:any) => res.data['items'].map((item:any) => item['id']['videoId']))
+        .then((res: any) => res['data']['items'].filter((item: any) => {
+            if (item['snippet']['title'].includes(title.slice(0,6)) || item['snippet']['description'].includes(title.slice(0,6))) {
+                return item.id.videoId
+            }
+        }))
+        .then((res:any) => res.map((item:any) => item.id.videoId))
+        console.log(response)
         setVideoList(response)
         return response
     }
@@ -33,7 +39,7 @@ export default function useYoutube(title:any) {
     const videoDurationList: any = []
     
     const videoDuration = (video:any, duration:any) => {
-        for (let i=0; i<5; i++) {
+        for (let i=0; i<video.length; i++) {
             const temp:any = {}
             temp['link'] = video[i];
             temp['duration'] = duration[i]

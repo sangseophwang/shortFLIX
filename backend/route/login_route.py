@@ -1,16 +1,31 @@
-from flask import Blueprint
-from service.google_login import GoogleLogin
+from flask import Blueprint, request
+import json
+from service.login import login
 
-bp = Blueprint('google',__name__, url_prefix='/')
+bp = Blueprint('login',__name__)
 
-# Google login route
-@bp.route('/login/google')
-def login():
-  g = GoogleLogin()
-  return g.login()
+# Default route
+@bp.route('/login', methods=['POST'])
+def login_user():
+  request_data = json.loads(request.data) 
+  return login(request_data)
 
-# Google authorize route
-@bp.route('/login/google/authorize')
-def authorize():
-  g = GoogleLogin()
-  return g.authorize()
+
+
+
+
+# from service.google_login import GoogleLogin
+
+# bp = Blueprint('google',__name__, url_prefix='/')
+
+# # Google login route
+# @bp.route('/login/google')
+# def login():
+#   g = GoogleLogin()
+#   return g.login()
+
+# # Google authorize route
+# @bp.route('/login/google/authorize')
+# def authorize():
+#   g = GoogleLogin()
+#   return g.authorize()
