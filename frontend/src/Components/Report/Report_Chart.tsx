@@ -15,76 +15,39 @@ const Report_Chart = ({ id }: ChartSelectProps) => {
               OTT 서비스 이용경험
             </th>
             <tr>
-              <td></td>
-              <td colSpan={2} align="center">
-                20년
-              </td>
-              <td colSpan={2} align="center">
-                19년
-              </td>
-            </tr>
-            <tr>
               <td align="center">연령</td>
-              <td align="center">이용경험 O</td>
-              <td align="center">이용경험 X</td>
-              <td align="center">이용경험 O</td>
-              <td align="center">이용경험 x</td>
-            </tr>
-            <tr>
-              <td align="center">10세 미만</td>
-              <td align="center">95</td>
-              <td align="center">48</td>
-              <td align="center">43</td>
-              <td align="center">171</td>
+              <td align="center">19년</td>
+              <td align="center">20년</td>
             </tr>
             <tr>
               <td align="center">10대</td>
-              <td align="center">957</td>
-              <td align="center">140</td>
-              <td align="center">590</td>
-              <td align="center">604</td>
+              <td align="center">184</td>
+              <td align="center">149</td>
             </tr>
             <tr>
               <td align="center">20대</td>
-              <td align="center">1170</td>
-              <td align="center">54</td>
-              <td align="center">779</td>
-              <td align="center">446</td>
+              <td align="center">345</td>
+              <td align="center">422</td>
             </tr>
             <tr>
               <td align="center">30대</td>
-              <td align="center">838</td>
-              <td align="center">65</td>
-              <td align="center">643</td>
-              <td align="center">385</td>
+              <td align="center">484</td>
+              <td align="center">564</td>
             </tr>
             <tr>
               <td align="center">40대</td>
-              <td align="center">1543</td>
-              <td align="center">281</td>
-              <td align="center">910</td>
-              <td align="center">1070</td>
+              <td align="center">516</td>
+              <td align="center">634</td>
             </tr>
             <tr>
               <td align="center">50대</td>
-              <td align="center">1531</td>
-              <td align="center">479</td>
-              <td align="center">732</td>
-              <td align="center">1375</td>
+              <td align="center">403</td>
+              <td align="center">643</td>
             </tr>
             <tr>
               <td align="center">60대 이상</td>
-              <td align="center">2208</td>
-              <td align="center">893</td>
-              <td align="center">334</td>
-              <td align="center">2782</td>
-            </tr>
-            <tr>
-              <td align="center">전체</td>
-              <td align="center">8342</td>
-              <td align="center">1960</td>
-              <td align="center">4031</td>
-              <td align="center">6833</td>
+              <td align="center">272</td>
+              <td align="center">583</td>
             </tr>
           </table>
         </article>
@@ -98,10 +61,10 @@ const Report_Chart = ({ id }: ChartSelectProps) => {
             <tr>
               <td></td>
               <td colSpan={2} align="center">
-                20년
+                19년
               </td>
               <td colSpan={2} align="center">
-                19년
+                20년
               </td>
             </tr>
             <tr>
@@ -112,60 +75,53 @@ const Report_Chart = ({ id }: ChartSelectProps) => {
               <td align="center">넷플릭스</td>
             </tr>
             <tr>
-              <td align="center">10세 미만</td>
-              <td align="center">95</td>
-              <td align="center">48</td>
-              <td align="center">43</td>
-              <td align="center">171</td>
-            </tr>
-            <tr>
               <td align="center">10대</td>
-              <td align="center">957</td>
-              <td align="center">140</td>
-              <td align="center">590</td>
-              <td align="center">604</td>
+              <td align="center">65</td>
+              <td align="center">1</td>
+              <td align="center">76</td>
+              <td align="center">2</td>
             </tr>
             <tr>
               <td align="center">20대</td>
-              <td align="center">1170</td>
-              <td align="center">54</td>
-              <td align="center">779</td>
-              <td align="center">446</td>
+              <td align="center">133</td>
+              <td align="center">3</td>
+              <td align="center">208</td>
+              <td align="center">6</td>
             </tr>
             <tr>
               <td align="center">30대</td>
-              <td align="center">838</td>
-              <td align="center">65</td>
-              <td align="center">643</td>
-              <td align="center">385</td>
+              <td align="center">286</td>
+              <td align="center">7</td>
+              <td align="center">367</td>
+              <td align="center">18</td>
             </tr>
             <tr>
               <td align="center">40대</td>
-              <td align="center">1543</td>
-              <td align="center">281</td>
-              <td align="center">910</td>
-              <td align="center">1070</td>
+              <td align="center">353</td>
+              <td align="center">9</td>
+              <td align="center">478</td>
+              <td align="center">22</td>
             </tr>
             <tr>
               <td align="center">50대</td>
-              <td align="center">1531</td>
-              <td align="center">479</td>
-              <td align="center">732</td>
-              <td align="center">1375</td>
+              <td align="center">335</td>
+              <td align="center">4</td>
+              <td align="center">565</td>
+              <td align="center">14</td>
             </tr>
             <tr>
               <td align="center">60대 이상</td>
-              <td align="center">2208</td>
-              <td align="center">893</td>
-              <td align="center">334</td>
-              <td align="center">2782</td>
+              <td align="center">231</td>
+              <td align="center">1</td>
+              <td align="center">538</td>
+              <td align="center">9</td>
             </tr>
             <tr>
               <td align="center">전체</td>
-              <td align="center">8342</td>
-              <td align="center">1960</td>
-              <td align="center">4031</td>
-              <td align="center">6833</td>
+              <td align="center">1403</td>
+              <td align="center">25</td>
+              <td align="center">2232</td>
+              <td align="center">71</td>
             </tr>
           </table>
         </article>
