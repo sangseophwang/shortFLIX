@@ -1,6 +1,6 @@
-import React, { PropsWithoutRef } from "react";
+import React from "react";
 import "./scss/Mypage_LikedList.scss";
-import Slider_Item from "../Common/Slider_Item";
+import Slider from "../Common/Slider";
 
 type NameProps = {
   name: any;
@@ -10,7 +10,7 @@ const Mypage_LikedList = ({ name }: NameProps) => {
   return (
     <section className="Mypage__LikedList">
       <div>{name}님이 좋아한 목록</div>
-      <Slider_Item />
+      <Slider />
     </section>
   );
 };
