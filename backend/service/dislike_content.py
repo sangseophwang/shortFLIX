@@ -1,8 +1,8 @@
 from flask import session
 from model.models import *
 
-def dislike_contents(content_id):
-    user = User.query.filter_by(email = session['email']).first()
+def dislike_contents(content_id, user_email):
+    user = User.query.filter_by(email = user_email).first()
     content = Content.query.filter_by(id = content_id).first()
     
     prev = user.likes_list
@@ -32,6 +32,6 @@ def dislike_contents(content_id):
     db.session.commit()  
 
     # '/detail'로 리다이렉트 예정     
-    return 'dislike'     
+    return '좋아요 -1'     
 
   
