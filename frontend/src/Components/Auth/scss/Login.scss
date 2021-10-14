@@ -1,0 +1,35 @@
+@import "../../Common/scss/mixins";
+
+.Login__Container {
+  @include Container_Form();
+  .Login__Contents {
+    @include Register_Contents_Form();
+    .Login__Logo {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    .Login__Form {
+      margin: 30px 0 -30px 0;
+      width: 50%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      @include Register_Form();
+      @include Register_Button();
+    }
+    .Login__Register {
+      > span {
+        font-size: 14px;
+      }
+      > a {
+        color: tomato;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 0.9;
+        text-decoration: none;
+      }
+    }
+  }
+}
