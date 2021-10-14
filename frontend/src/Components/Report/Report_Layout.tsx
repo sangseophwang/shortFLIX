@@ -18,26 +18,28 @@ const Report_Layout = ({ isFirst }: ReportPageProps) => {
         <>
           <Report_Sidebar />
           <Report_Title>
-            🔍 OTT 서비스 이용률 {"&"} 서비스별 이용률
+            🔍 OTT 서비스별 {"&"} 연령별 서비스 이용률
           </Report_Title>
           <Report_Graph id="graph1" />
           <Report_Graph id="graph2" />
           <Report_Chart id="chart1" />
           <Report_Chart id="chart2" />
           <Report_Source>
-            출처 : 미디어통계포털 2019, 2020 방송매체이용행태조사
+            출처 : 방송통계포털 2019, 2020년 원시자료
           </Report_Source>
           <Report_Insight id="insight1" />
         </>
       ) : (
         <>
           <Report_Sidebar />
-          <Report_Title>🔍 OTT 서비스 연령대별 이용시간</Report_Title>
+          <Report_Title>
+            🔍 OTT 서비스 연령대별 {"&"} 이용빈도별 평균 이용시간
+          </Report_Title>
           <Report_Graph id="graph3" />
           <Report_Graph id="graph4" />
           <Report_Chart id="chart3" />
           <Report_Chart id="chart4" />
-          <Report_Source>출처 : 미디어통계포털</Report_Source>
+          <Report_Source>출처 : 미디어통계포털 2020년 원시자료</Report_Source>
           <Report_Insight id="insight2" />
         </>
       )}
