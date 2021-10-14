@@ -2,9 +2,6 @@ import numpy as np
 import pandas as pd
 from flask import jsonify
 from model.models import *
-# import matplotlib as mpl
-# import matplotlib.pyplot as plt
-# import seaborn as sns
 
 from ast import literal_eval
 from sklearn.feature_extraction.text import CountVectorizer
@@ -16,7 +13,7 @@ def filter_content(request_data):
     result = data.preferences
 
     movies = pd.read_csv('justwatch_year.csv', encoding='cp949')
-    result = request_data
+    
     # running_time -> 시,분 계산
     for i in range(len(movies['running_time'])):
         time = movies['running_time'][i]
@@ -40,7 +37,7 @@ def filter_content(request_data):
     movies['genre'] = movies['genre'].apply(lambda x: [i for i in list(x)]).apply(lambda x : ' '.join(x))
     movies['key_words'] = movies['key_words'].apply(literal_eval)
     movies['key_words'] = movies['key_words'].apply(lambda x: [i for i in list(x)]).apply(lambda x : ' '.join(x))
-
+    print(12345,result['contentType'])
     # 영화 종류
     movies = movies[movies['kind'].apply(lambda x : x in result['contentType'])]
     # for c in range(len(movies)):
@@ -109,7 +106,7 @@ def filter_content(request_data):
 
         return movies.iloc[final_index] # 점수로 정렬 시.sort_values('score', ascending=False)
 
-    similar_movies = find_sim_movie(movies, genre_sim_g ,genre_sim_k, 'target', 10)
+    similar_movies = find_sim_movie(movies, genre_sim_g ,genre_sim_k, 'target', 32)
     # 결과 값
     similar_movies[['title', 'genre', 'similarity']]
     idx_similar_movies = similar_movies[['title', 'genre', 'similarity']].index
