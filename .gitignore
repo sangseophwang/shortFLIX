@@ -251,6 +251,8 @@ Temporary Items
 # Cython debug symbols
 
 ### react ###
+/node_modules
+/build
 .DS_*
 logs
 **/*.backup.*
