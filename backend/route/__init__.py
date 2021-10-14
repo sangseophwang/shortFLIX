@@ -20,7 +20,7 @@ def create_app():
   
   from model import models
 
-  from route import login_route, content_route, random_route, like_route, dislike_route, register_route, survey_route, logout_route
+  from route import login_route, content_route, random_route, like_route, dislike_route, register_route, survey_route, logout_route, mypage_route
   
   app.register_blueprint(login_route.bp)
   app.register_blueprint(content_route.bp)
@@ -30,5 +30,6 @@ def create_app():
   app.register_blueprint(register_route.bp)
   app.register_blueprint(survey_route.bp)
   app.register_blueprint(logout_route.bp)
-
+  app.register_blueprint(mypage_route.bp)
+  
   return app
