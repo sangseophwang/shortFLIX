@@ -38,6 +38,7 @@ const Login = () => {
         if (response.status === 200) {
           console.log(response.data);
           sessionStorage.setItem("username", response.data);
+          sessionStorage.setItem("email", id);
           history.push("/");
         }
       });
