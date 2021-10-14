@@ -7,470 +7,467 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 
 const genres = [
-    {id: 0, kor: '서부', eng: 'Western'}, 
-    {id: 1, kor: '공포', eng: 'Horror'}, 
-    {id: 2, kor: '로맨스', eng: 'Romance'},
-    {id: 3, kor: '액션', eng: 'Action & Adventure'},
-    {id: 4, kor: '스릴러', eng: 'Mystery & Thriller'},
-    {id: 5, kor: '코미디', eng: 'Comedy'},
-    {id: 6, kor: '범죄', eng: 'Crime'},
-    {id: 7, kor: 'Made in Europe', eng: 'Made in Europe'},
-    {id: 8, kor: '판타지', eng: 'Fantasy'},
-    {id: 9, kor: '전쟁', eng: 'War & Military'},
-    {id: 10, kor: '드라마', eng: 'Drama'},
-    {id: 11, kor: '역사', eng: 'History'},
-    {id: 12, kor: '공상과학', eng: 'Sci-Fi'},
-    {id: 13, kor: '다큐멘터리', eng: 'Documentary'},
-    {id: 14, kor: '음악', eng: 'Music & Musical'},
-    {id: 15, kor: '리얼리티', eng: 'Reality'},
-    {id: 16, kor: '가족', eng: 'Kids & Family'},
-    {id: 17, kor: '스포츠', eng: 'Sport'},
-    {id: 18, kor: '애니메이션', eng: 'Animation'},
+    {id: '서부', kor: '서부', eng: 'Western'}, 
+    {id: '공포', kor: '공포', eng: 'Horror'}, 
+    {id: '로맨스', kor: '로맨스', eng: 'Romance'},
+    {id: '액션', kor: '액션', eng: 'Action & Adventure'},
+    {id: '스릴러', kor: '스릴러', eng: 'Mystery & Thriller'},
+    {id: '코미디', kor: '코미디', eng: 'Comedy'},
+    {id: '범죄', kor: '범죄', eng: 'Crime'},
+    {id: 'Made in Europe', kor: 'Made in Europe', eng: 'Made in Europe'},
+    {id: '판타지', kor: '판타지', eng: 'Fantasy'},
+    {id: '전쟁', kor: '전쟁', eng: 'War & Military'},
+    {id: '역사', kor: '역사', eng: 'History'},
+    {id: 'SF', kor: '공상과학', eng: 'Sci-Fi'},
+    {id: '음악', kor: '음악', eng: 'Music & Musical'},
+    {id: 'Reality TV', kor: '리얼리티', eng: 'Reality'},
+    {id: '가족', kor: '가족', eng: 'Kids & Family'},
+    {id: '스포츠', kor: '스포츠', eng: 'Sport'}
 ]
 
 const types = [
-    {id: 'movie', section: '영화', desc:''},
-    {id: 'drama', section: '드라마', desc:''},
-    {id: 'documentary', section: '다큐멘터리', desc:''},
-    {id: 'animation', section: '애니메이션', desc:''}
+    {id: '영화', section: '영화', desc:''},
+    {id: '드라마', section: '드라마', desc:''},
+    {id: '다큐멘터리', section: '다큐멘터리', desc:''},
+    {id: '애니메이션', section: '애니메이션', desc:''}
 
 ]
 
 const years = [
-    {id: '1900s', time: '2000년 이전', desc: ''},
-    {id: '2000s', time: '2000년-2010년', desc: ''},
-    {id: '2010s', time: '2010년-2020년', desc: ''},
-    {id: '2020s', time: '2020년 이후', desc: ''}
+    {id: '2000년 이전', time: '2000년 이전', desc: ''},
+    {id: '2000년-2009년', time: '2000년-2009년', desc: ''},
+    {id: '2010년-2019년', time: '2010년-2019년', desc: ''},
+    {id: '2020년 이후', time: '2020년 이후', desc: ''}
 ]
 
 const keywordObjList = [
     {
-        "id": 19,
+        "id": "집행",
         "keyword": "집행",
         "desc": ""
     },
     {
-        "id": 20,
+        "id": "시리즈",
         "keyword": "시리즈",
         "desc": ""
     },
     {
-        "id": 21,
+        "id": "게임",
         "keyword": "게임",
         "desc": ""
     },
     {
-        "id": 22,
+        "id": "인류",
         "keyword": "인류",
         "desc": ""
     },
     {
-        "id": 23,
+        "id": "퀸",
         "keyword": "퀸",
         "desc": ""
     },
     {
-        "id": 24,
+        "id": "비밀",
         "keyword": "비밀",
         "desc": ""
     },
     {
-        "id": 25,
+        "id": "역사",
         "keyword": "역사",
         "desc": ""
     },
     {
-        "id": 26,
+        "id": "형제",
         "keyword": "형제",
         "desc": ""
     },
     {
-        "id": 27,
+        "id": "힙합",
         "keyword": "힙합",
         "desc": ""
     },
     {
-        "id": 28,
+        "id": "무대",
         "keyword": "무대",
         "desc": ""
     },
     {
-        "id": 29,
+        "id": "호기심",
         "keyword": "호기심",
         "desc": ""
     },
     {
-        "id": 30,
+        "id": "야구",
         "keyword": "야구",
         "desc": ""
     },
     {
-        "id": 31,
+        "id": "거인",
         "keyword": "거인",
         "desc": ""
     },
     {
-        "id": 32,
+        "id": "좀비",
         "keyword": "좀비",
         "desc": ""
     },
     {
-        "id": 33,
+        "id": "아들",
         "keyword": "아들",
         "desc": ""
     },
     {
-        "id": 34,
+        "id": "영화",
         "keyword": "영화",
         "desc": ""
     },
     {
-        "id": 35,
+        "id": "미국",
         "keyword": "미국",
         "desc": ""
     },
     {
-        "id": 36,
+        "id": "범죄",
         "keyword": "범죄",
         "desc": ""
     },
     {
-        "id": 37,
+        "id": "진실",
         "keyword": "진실",
         "desc": ""
     },
     {
-        "id": 38,
+        "id": "조직",
         "keyword": "조직",
         "desc": ""
     },
     {
-        "id": 39,
+        "id": "변호사",
         "keyword": "변호사",
         "desc": ""
     },
     {
-        "id": 40,
+        "id": "세계대전",
         "keyword": "세계대전",
         "desc": ""
     },
     {
-        "id": 41,
+        "id": "아버지",
         "keyword": "아버지",
         "desc": ""
     },
     {
-        "id": 42,
+        "id": "마약",
         "keyword": "마약",
         "desc": ""
     },
     {
-        "id": 43,
+        "id": "살인",
         "keyword": "살인",
         "desc": ""
     },
     {
-        "id": 44,
+        "id": "요괴",
         "keyword": "요괴",
         "desc": ""
     },
     {
-        "id": 45,
+        "id": "조선",
         "keyword": "조선",
         "desc": ""
     },
     {
-        "id": 46,
+        "id": "드래곤",
         "keyword": "드래곤",
         "desc": ""
     },
     {
-        "id": 47,
+        "id": "발견",
         "keyword": "발견",
         "desc": ""
     },
     {
-        "id": 48,
+        "id": "전쟁",
         "keyword": "전쟁",
         "desc": ""
     },
     {
-        "id": 49,
+        "id": "마음",
         "keyword": "마음",
         "desc": ""
     },
     {
-        "id": 50,
+        "id": "작전",
         "keyword": "작전",
         "desc": ""
     },
     {
-        "id": 51,
+        "id": "소녀",
         "keyword": "소녀",
         "desc": ""
     },
     {
-        "id": 52,
+        "id": "모험",
         "keyword": "모험",
         "desc": ""
     },
     {
-        "id": 53,
+        "id": "래그",
         "keyword": "래그",
         "desc": ""
     },
     {
-        "id": 54,
+        "id": "초원",
         "keyword": "초원",
         "desc": ""
     },
     {
-        "id": 55,
+        "id": "소년",
         "keyword": "소년",
         "desc": ""
     },
     {
-        "id": 56,
+        "id": "중학교",
         "keyword": "중학교",
         "desc": ""
     },
     {
-        "id": 57,
+        "id": "왕",
         "keyword": "왕",
         "desc": ""
     },
     {
-        "id": 58,
+        "id": "친구",
         "keyword": "친구",
         "desc": ""
     },
     {
-        "id": 59,
+        "id": "형님",
         "keyword": "형님",
         "desc": ""
     },
     {
-        "id": 60,
+        "id": "전문가",
         "keyword": "전문가",
         "desc": ""
     },
     {
-        "id": 61,
+        "id": "사람",
         "keyword": "사람",
         "desc": ""
     },
     {
-        "id": 62,
+        "id": "공연",
         "keyword": "공연",
         "desc": ""
     },
     {
-        "id": 63,
+        "id": "군인",
         "keyword": "군인",
         "desc": ""
     },
     {
-        "id": 64,
+        "id": "결혼",
         "keyword": "결혼",
         "desc": ""
     },
     {
-        "id": 65,
+        "id": "딸",
         "keyword": "딸",
         "desc": ""
     },
     {
-        "id": 66,
+        "id": "로맨스",
         "keyword": "로맨스",
         "desc": ""
     },
     {
-        "id": 67,
+        "id": "공개",
         "keyword": "공개",
         "desc": ""
     },
     {
-        "id": 68,
+        "id": "음악",
         "keyword": "음악",
         "desc": ""
     },
     {
-        "id": 69,
+        "id": "드라마",
         "keyword": "드라마",
         "desc": ""
     },
     {
-        "id": 70,
+        "id": "부대",
         "keyword": "부대",
         "desc": ""
     },
     {
-        "id": 71,
+        "id": "시간",
         "keyword": "시간",
         "desc": ""
     },
     {
-        "id": 72,
+        "id": "총잡이",
         "keyword": "총잡이",
         "desc": ""
     },
     {
-        "id": 73,
+        "id": "영국",
         "keyword": "영국",
         "desc": ""
     },
     {
-        "id": 74,
+        "id": "스타",
         "keyword": "스타",
         "desc": ""
     },
     {
-        "id": 75,
+        "id": "가족",
         "keyword": "가족",
         "desc": ""
     },
     {
-        "id": 76,
+        "id": "레슬링",
         "keyword": "레슬링",
         "desc": ""
     },
     {
-        "id": 77,
+        "id": "경찰",
         "keyword": "경찰",
         "desc": ""
     },
     {
-        "id": 78,
+        "id": "답",
         "keyword": "답",
         "desc": ""
     },
     {
-        "id": 79,
+        "id": "노래",
         "keyword": "노래",
         "desc": ""
     },
     {
-        "id": 80,
+        "id": "운명",
         "keyword": "운명",
         "desc": ""
     },
     {
-        "id": 81,
+        "id": "트리스탄",
         "keyword": "트리스탄",
         "desc": ""
     },
     {
-        "id": 82,
+        "id": "아이",
         "keyword": "아이",
         "desc": ""
     },
     {
-        "id": 83,
+        "id": "힘",
         "keyword": "힘",
         "desc": ""
     },
     {
-        "id": 84,
+        "id": "인생",
         "keyword": "인생",
         "desc": ""
     },
     {
-        "id": 85,
+        "id": "존재",
         "keyword": "존재",
         "desc": ""
     },
     {
-        "id": 86,
+        "id": "선수",
         "keyword": "선수",
         "desc": ""
     },
     {
-        "id": 87,
+        "id": "거리",
         "keyword": "거리",
         "desc": ""
     },
     {
-        "id": 88,
+        "id": "경쟁",
         "keyword": "경쟁",
         "desc": ""
     },
     {
-        "id": 89,
+        "id": "복수",
         "keyword": "복수",
         "desc": ""
     },
     {
-        "id": 90,
+        "id": "음식",
         "keyword": "음식",
         "desc": ""
     },
     {
-        "id": 91,
+        "id": "공포",
         "keyword": "공포",
         "desc": ""
     },
     {
-        "id": 92,
+        "id": "다큐멘터리",
         "keyword": "다큐멘터리",
         "desc": ""
     },
     {
-        "id": 93,
+        "id": "코미디",
         "keyword": "코미디",
         "desc": ""
     },
     {
-        "id": 94,
+        "id": "죽음",
         "keyword": "죽음",
         "desc": ""
     },
     {
-        "id": 95,
+        "id": "덴마크",
         "keyword": "덴마크",
         "desc": ""
     },
     {
-        "id": 96,
+        "id": "사랑",
         "keyword": "사랑",
         "desc": ""
     },
     {
-        "id": 97,
+        "id": "형사",
         "keyword": "형사",
         "desc": ""
     },
     {
-        "id": 98,
+        "id": "마지막",
         "keyword": "마지막",
         "desc": ""
     },
     {
-        "id": 99,
+        "id": "보안관",
         "keyword": "보안관",
         "desc": ""
     },
     {
-        "id": 100,
+        "id": "미래",
         "keyword": "미래",
         "desc": ""
     },
     {
-        "id": 101,
+        "id": "테러",
         "keyword": "테러",
         "desc": ""
     },
     {
-        "id": 102,
+        "id": "임무",
         "keyword": "임무",
         "desc": ""
     },
     {
-        "id": 103,
+        "id": "동료",
         "keyword": "동료",
         "desc": ""
     },
     {
-        "id": 104,
+        "id": "애니메이션",
         "keyword": "애니메이션",
         "desc": ""
     }
@@ -483,6 +480,8 @@ export default function TestPage() {
     const [temp, setTemp] = useState(new Set()) // 한 페이지에서 선택한 것 받고 초기화
     const [isChecked, setIsChecked] = useState(false);
     const [page, setPage] = useState('contentType') // 현재 보여질 페이지
+    const [resFlag, setResFlag] = useState(false)
+    const [res, setRes] = useState([])
     const history = useHistory();
 
 
@@ -501,7 +500,7 @@ export default function TestPage() {
             temps.delete(id);
             setTemp(temps);
         }
-        console.log(temp)
+
     }
 
     const handleDone = (e:any) => {
@@ -533,12 +532,25 @@ export default function TestPage() {
             // data 보내기 (result 값) 
             const last:any = {...result}
             last['keyword'] = Array.from(temp)
-            // axios.post('/', last)
-            setTimeout(()=> {
-                console.log(last)
-
-                history.push('/result')
-            }, 2000)
+            // axios.post('/survey_result', last)
+            const spinner = setInterval(()=> {
+                //axios.get('/survey_result')
+                    // .then((response: any) => {
+                    //     if (response.status === 200) {
+                    //     console.log(response.data);
+                    //     setResFlag(true)
+                    //     setRes(response.data)
+                    //     }
+                    // })
+            }, 1000)
+            if (resFlag) {
+                clearInterval(spinner)
+                history.push({
+                    pathname: '/result',
+                    state: res
+                })
+            }
+            
         }
     }
     
