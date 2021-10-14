@@ -13,7 +13,10 @@ def like_contents(content_id):
         'rating' : content.rating,
         'genre' : content.genre.replace("'",""),
         'running_time' : content.running_time,
-        'synop' : content.synop
+        'synop' : content.synop,
+        'like':content.like,
+        'key_words' : content.key_words,
+        'year' : content.year
     })
 
     if user.likes_list == None:
@@ -36,15 +39,6 @@ def like_contents(content_id):
     db.session.add(user)
     db.session.commit()
     db.session.close()
-    # db.session.close()
-    # user_info = {
-    #     'id' :  user.id,
-    #     'email' : user.email,
-    #     'user_name': user.user_name,
-    #     'preferences': user.preferences,
-    #     'likes_list' : user.likes_list,
-    #     'latest_reviews_list' : user.latest_reviews_list
-    #     }
-    # print(user_info)
+    
     # '/detail'로 리다이렉트 예정
     return 'True'
