@@ -3,16 +3,15 @@ import React from 'react'
 
 
 type YoutubeThumbnailProps = {
-    image: string;
-    time: any;
     url: string;
     onClick: any;
+    time: any;
 }
 
-export default function YoutubeThumbnail( {image, url, time, onClick}: YoutubeThumbnailProps) {
+export default function YoutubeThumbnail( {url, onClick, time}: YoutubeThumbnailProps) {
     return (
         <div className='youtubeThumbnail' onClick={onClick}>
-            <img src={image} />
+            <img src={`https://i.ytimg.com/vi/${url}/mqdefault.jpg`} />
             <div className='timeBox'>{time}</div>
         </div>
     )

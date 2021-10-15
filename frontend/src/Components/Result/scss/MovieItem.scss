@@ -3,13 +3,16 @@
   margin: 5px;
   cursor: pointer;
   img {
-    width: 200px;
+    width: 150px;
   }
   .movieTitle {
     position: absolute;
+    text-align: right;
+    line-height: 1.2rem;
     bottom: 5px;
     right: 5px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-size: 0.8rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
   }
   &:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
