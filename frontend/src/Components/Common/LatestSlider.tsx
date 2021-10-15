@@ -12,14 +12,14 @@ interface LengthProps {
 
 function LatestSlider(props: LengthProps) {
   const [width, setWidth] = useState("");
+  const LinkURL = `https://www.youtube.com/watch?v=${props.data}`;
   useEffect(() => {
     if (props.number && props.number < 7) {
-      setWidth(`${props.number * 150}px`);
+      setWidth(`${props.number * 200}px`);
     } else {
-      setWidth("1100px");
+      setWidth("1400px");
     }
-  }, []);
-  console.log(props.number * 130);
+  }, [props.number]);
   const settings = {
     infinite: true,
     slidesToShow: props.number && props.number < 7 ? props.number : 7,
@@ -32,7 +32,13 @@ function LatestSlider(props: LengthProps) {
           props.data.map((data: any, index: number) => {
             return (
               <div className="Slider_Item" key={index}>
-                <Button styles="btn-sm">{data}</Button>
+                <a href={LinkURL}>
+                  <img
+                    className="Latest__Image"
+                    src={`https://i.ytimg.com/vi/${data}/mqdefault.jpg`}
+                    alt=""
+                  />
+                </a>
               </div>
             );
           })}

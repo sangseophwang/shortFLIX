@@ -3,6 +3,7 @@ import "./scss/Mypage_Layout.scss";
 import Navigation from "../Common/Navigation";
 import LikeSlider from "../Common/LikeSlider";
 import TasteSlider from "../Common/TasteSlider";
+import LatestSlider from "../Common/LatestSlider";
 import { useHistory } from "react-router";
 import axios from "axios";
 
@@ -46,7 +47,9 @@ const Mypage_Layout = () => {
         {
           response.data.latest_reviews_list === null
             ? {}
-            : setLatestData(response.data.latest_reviews_list);
+            : setLatestData(
+                JSON.parse(response.data.latest_reviews_list)["urls"]
+              );
         }
         {
           response.data.preferences === null
@@ -61,7 +64,9 @@ const Mypage_Layout = () => {
         {
           response.data.latest_reviews_list === null
             ? {}
-            : setLatestLength(response.data.latest_reviews_list.length);
+            : setLatestLength(
+                JSON.parse(response.data.latest_reviews_list)["urls"].length
+              );
         }
         {
           response.data.preferences === null
@@ -70,6 +75,8 @@ const Mypage_Layout = () => {
         }
       });
   }, []);
+  console.log(latestData);
+  console.log(latestLength);
   return (
     <article className="Mypage__Container">
       <Navigation />
@@ -90,7 +97,7 @@ const Mypage_Layout = () => {
         </section>
         <section className="Mypage__Recent">
           <div>최근에 본 리뷰 영상</div>
-          {/* <Slider number={latestLength} data={latestData} /> */}
+          <LatestSlider number={latestLength} data={latestData} />
         </section>
       </div>
     </article>
