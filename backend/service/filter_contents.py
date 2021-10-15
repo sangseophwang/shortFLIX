@@ -13,7 +13,10 @@ def filter_content(request_data):
     result = data.preferences
 
     movies = pd.read_csv('justwatch_year.csv', encoding='cp949')
-    
+    print(movies['year'][6],movies['title'][6])
+    print(movies['year'][4],movies['title'][4])
+    print(movies['year'][5],movies['title'][5])
+
     # running_time -> 시,분 계산
     for i in range(len(movies['running_time'])):
         time = movies['running_time'][i]
@@ -22,12 +25,12 @@ def filter_content(request_data):
 
     kind = []
     for i in range(len(movies)):
-        if (movies['running_time'][i] <= 90) & ('드라마' in movies['genre'][i]):
-            kind.append('드라마')
+        if '애니메이션' in movies['genre'][i]:
+            kind.append('애니메이션')
         elif '다큐멘터리' in movies['genre'][i]: 
             kind.append('다큐멘터리')
-        elif '애니메이션' in movies['genre'][i]:
-            kind.append('애니메이션')
+        elif movies['running_time'][i] <= 90:
+            kind.append('드라마')
         else: # 영화
             kind.append('영화')
     movies['kind'] = kind
@@ -40,7 +43,7 @@ def filter_content(request_data):
 
     # 영화 종류
     movies = movies[movies['kind'].apply(lambda x : x in result['contentType'])]
-    print(movies)
+    print(movies.head(20))
     # for c in range(len(movies)):
     #     if c == '드라마':
     #         movies = movies[(movies['running_time'] <= 90) & (movies['genre'].str.contains('드라마'))]
@@ -50,14 +53,13 @@ def filter_content(request_data):
     #         movies = movies[movies['genre'].str.contains('애니메이션')]
     #     else: # 영화
     #         movies = movies[movies['running_time'] > 90]
-
-    print('44444',movies['year'][4],movies['title'][4])
-    print('555555',movies['year'][5],movies['title'][5])
-    print('666666',movies['year'][6],movies['title'][6])
+    print(movies['year'][4],movies['title'][4])
+    print(movies['year'][5],movies['title'][5])
+    print(movies['year'][6],movies['title'][6])
     #연도 계산
-    for i in range(len(movies['img'])):
-         
+    for i in range(len(movies['year'])): 
         if movies['year'][i] >= 2020:
+            # print(movies['year'][i],movies['title'][i])
             movies['year'][i] = '2020년 이후'
         elif movies['year'][i] >= 2010:
             movies['year'][i] = '2010년-2019년'
@@ -85,7 +87,7 @@ def filter_content(request_data):
     movies.drop('kind', axis=1, inplace = True)
 
     # 딕셔너리 이름이 result라고 하면
-    movies.loc[797] = [ 1096,'target', 0.0, ' '.join(result['genre']), ' '.join(result['keyword'])] # 입력받은 값
+    movies.iloc[-1] = [ 1096,'target', 0.0, ' '.join(result['genre']), ' '.join(result['keyword'])] # 입력받은 값
     # movie의 마지막행 = [제목대신 'target', 임의의 평점 0점, 입력받은 장르,  입력받은 키워드]
 
     # 장르와 관련된 유사도 
@@ -119,7 +121,7 @@ def filter_content(request_data):
     # DB에 있는 id값과 맞추기 위한 인덱스 + 2
     # for i in idx_similar_movies:
         # print(i+2)
-    idx_similar_movies = [i+1 for i in idx_similar_movies]
+    idx_similar_movies = [i+2 for i in idx_similar_movies]
 
     contents_dict = {}
     contents_list = []
