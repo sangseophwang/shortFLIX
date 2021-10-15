@@ -8,13 +8,12 @@ def login(request_data):
     data = User.query.filter_by(email = user_email).first()
 
     if data is None:
-        return "사용자 정보가 없습니다"
+        return "Record not found", 400
     else:
         check_password = bcrypt.checkpw(user_pwd, data.pwd.encode('utf-8'))
         if check_password:
             session['login'] = data.email
             return data.user_name
         else:
-            return "비밀번호가 일치하지 않습니다"
-    return None
+            return "Record not found", 400
 
