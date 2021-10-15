@@ -40,6 +40,7 @@ def filter_content(request_data):
 
     # 영화 종류
     movies = movies[movies['kind'].apply(lambda x : x in result['contentType'])]
+    print(movies)
     # for c in range(len(movies)):
     #     if c == '드라마':
     #         movies = movies[(movies['running_time'] <= 90) & (movies['genre'].str.contains('드라마'))]
@@ -50,8 +51,12 @@ def filter_content(request_data):
     #     else: # 영화
     #         movies = movies[movies['running_time'] > 90]
 
+    print('44444',movies['year'][4],movies['title'][4])
+    print('555555',movies['year'][5],movies['title'][5])
+    print('666666',movies['year'][6],movies['title'][6])
     #연도 계산
-    for i in range(len(movies['year'])): 
+    for i in range(len(movies['img'])):
+         
         if movies['year'][i] >= 2020:
             movies['year'][i] = '2020년 이후'
         elif movies['year'][i] >= 2010:
@@ -80,7 +85,7 @@ def filter_content(request_data):
     movies.drop('kind', axis=1, inplace = True)
 
     # 딕셔너리 이름이 result라고 하면
-    movies.loc[-1] = [ 'target', 0.0, ' '.join(result['genre']), ' '.join(result['keyword'])] # 입력받은 값
+    movies.loc[797] = [ 1096,'target', 0.0, ' '.join(result['genre']), ' '.join(result['keyword'])] # 입력받은 값
     # movie의 마지막행 = [제목대신 'target', 임의의 평점 0점, 입력받은 장르,  입력받은 키워드]
 
     # 장르와 관련된 유사도 
@@ -114,7 +119,7 @@ def filter_content(request_data):
     # DB에 있는 id값과 맞추기 위한 인덱스 + 2
     # for i in idx_similar_movies:
         # print(i+2)
-    idx_similar_movies = [i+2 for i in idx_similar_movies]
+    idx_similar_movies = [i+1 for i in idx_similar_movies]
 
     contents_dict = {}
     contents_list = []
