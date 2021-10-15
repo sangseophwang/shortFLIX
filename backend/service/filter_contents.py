@@ -61,7 +61,8 @@ def filter_content(request_data):
     movies.drop(['Unnamed: 0'], axis = 1, inplace = True)
 
     # 딕셔너리 이름이 result라고 하면
-    movies.loc[795] = ['target', 0.0, ' '.join(result['genre']), ' '.join(result['keyword'])] # 입력받은 값
+    movies.loc[795] = ['target', 0.0, ' '.join(result['genre']),'year', ' '.join(result['keyword']), 'kind'] 
+    # 입력받은 값
     # movie의 마지막행 = [제목대신 'target', 임의의 평점 0점, 입력받은 장르,  입력받은 키워드]
 
     # 장르와 관련된 유사도 
@@ -93,15 +94,17 @@ def filter_content(request_data):
     similar_movies = similar_movies[similar_movies['kind'].apply(lambda x : x in result['contentType'])]
     # 연도
     similar_movies = similar_movies[similar_movies['year'].apply(lambda x : x in result['year'])]
+
+    similar_movies = similar_movies [:32]
     # 결과 값
-    similar_movies[['title', 'genre', 'similarity']]
     idx_similar_movies = similar_movies[['title', 'genre', 'similarity']].index
+    # idx_similar_movies = similar_movies.index.values()
 
     # DB에 있는 id값과 맞추기 위한 인덱스 + 2
     # for i in idx_similar_movies:
         # print(i+2)
-    idx_similar_movies = [i+2 for i in idx_similar_movies]
-
+    idx_similar_movies = [i+1 for i in idx_similar_movies]
+    print(idx_similar_movies)
     contents_dict = {}
     contents_list = []
     for item in idx_similar_movies:
@@ -118,6 +121,7 @@ def filter_content(request_data):
             'key_words' : content.key_words,
             'year' : content.year
             })
+            
     contents_dict['data'] = contents_list
     
     return jsonify(contents_dict)
