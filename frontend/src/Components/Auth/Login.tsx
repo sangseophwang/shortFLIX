@@ -40,6 +40,15 @@ const Login = () => {
           sessionStorage.setItem("username", response.data);
           sessionStorage.setItem("email", id);
           history.push("/");
+        } else {
+          alert("error!");
+        }
+      })
+      .catch((error) => {
+        if (error.response.data.email) {
+          alert("이메일을 정확히 입력해주세요.");
+        } else if (error.response.data.password) {
+          alert("패스워드를 정확히 입력해주세요.");
         }
       });
   };
