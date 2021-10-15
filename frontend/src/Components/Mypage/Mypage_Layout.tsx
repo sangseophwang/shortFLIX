@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./scss/Mypage_Layout.scss";
 import Navigation from "../Common/Navigation";
-import Button from "../Common/Button";
-import Slider from "../Common/Slider";
+import LikeSlider from "../Common/LikeSlider";
+import TasteSlider from "../Common/TasteSlider";
+import LatestSlider from "../Common/LatestSlider";
 import { useHistory } from "react-router";
 import axios from "axios";
 
@@ -25,9 +26,9 @@ const Mypage_Layout = () => {
   const history = useHistory();
   const onLogoutHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    axios.get(URL + "/logout").then((response) => {
-      console.log(response.data);
+    axios.get(URL + "/logout").then(() => {
       sessionStorage.removeItem("username");
+      sessionStorage.removeItem("email");
       history.push("/");
     });
   };
@@ -38,15 +39,44 @@ const Mypage_Layout = () => {
       })
       .then((response) => {
         console.log(response.data);
-        setLikeLength(response.data.likes_list.length);
-        // setLatestLength(response.data.latest_reviews_list.length);
-        // setPreferencesLength(response.data.preferences.length);
-        // setLatestData(response.data.latest_reviews_list);
-        // setPreferencesData(response.data.preferences);
-        setLikeData(response.data.likes_list);
-        console.log(response.data);
+        {
+          response.data.likes_list === null
+            ? {}
+            : setLikeData(response.data.likes_list);
+        }
+        {
+          response.data.latest_reviews_list === null
+            ? {}
+            : setLatestData(
+                JSON.parse(response.data.latest_reviews_list)["urls"]
+              );
+        }
+        {
+          response.data.preferences === null
+            ? {}
+            : setPreferencesData(response.data.preferences.genre);
+        }
+        {
+          response.data.likes_list === null
+            ? {}
+            : setLikeLength(response.data.likes_list.length);
+        }
+        {
+          response.data.latest_reviews_list === null
+            ? {}
+            : setLatestLength(
+                JSON.parse(response.data.latest_reviews_list)["urls"].length
+              );
+        }
+        {
+          response.data.preferences === null
+            ? {}
+            : setPreferencesLength(response.data.preferences.genre.length);
+        }
       });
   }, []);
+  console.log(latestData);
+  console.log(latestLength);
   return (
     <article className="Mypage__Container">
       <Navigation />
@@ -59,17 +89,15 @@ const Mypage_Layout = () => {
         </div>
         <section className="Mypage__Taste">
           <div>{username}님의 취향</div>
-          <Button styles="btn-sm">호러</Button>
-          <Button styles="btn-sm">로맨스</Button>
-          <Button styles="btn-sm">액션</Button>
+          <TasteSlider number={preferencesLength} data={preferencesData} />
         </section>
         <section className="Mypage__LikedList">
           <div>{username}님이 좋아한 목록</div>
-          <Slider number={likeLength} data={likeData} />
+          <LikeSlider number={likeLength} data={likeData} />
         </section>
         <section className="Mypage__Recent">
           <div>최근에 본 리뷰 영상</div>
-          <Slider number={latestLength} data={latestData} />
+          <LatestSlider number={latestLength} data={latestData} />
         </section>
       </div>
     </article>

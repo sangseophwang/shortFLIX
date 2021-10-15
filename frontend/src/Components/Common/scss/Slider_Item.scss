@@ -1,13 +1,19 @@
 .Slider {
   margin: 30px 20px 20px 20px;
-  width: 900px;
-
   > div {
+    width: 100%;
     .Slider_Item {
-      width: 100%;
-      img {
+      > img {
         max-width: 130px;
         height: 155px;
+      }
+      > button {
+        height: 70px;
+        margin-bottom: 30px;
+      }
+      .Latest__Image {
+        width: 180px;
+        height: 110px;
       }
     }
   }
