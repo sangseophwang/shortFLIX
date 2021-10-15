@@ -2,6 +2,10 @@
   width: 70%;
   margin: 1rem auto;
   overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
   height: 50vh;
   position: relative;
   display: flex;
