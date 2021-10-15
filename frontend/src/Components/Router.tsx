@@ -24,7 +24,7 @@ const AppRouter = () => {
         <Route path="/test/:detail" component={Test} />
         <Route path="/report/:id" component={Report} />
         <Route exact path="/result" component={Result} />
-        <Route exact path="/watchvideo" component={WatchVideo} />
+        <Route exact path="/watchvideo/:id" component={WatchVideo} />
       </Switch>
     </Router>
   );
