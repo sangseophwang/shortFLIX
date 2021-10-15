@@ -5,13 +5,14 @@
   padding: 20px;
 
   .backToList {
-    margin-top: 0.5rem;
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     cursor: pointer;
+    margin: 10px 0;
     img {
       margin-right: 10px;
-      width: 1.5rem;
+      height: 1.3rem;
     }
   }
 
@@ -31,7 +32,8 @@
 
       .videoTitle {
         font-size: 2rem;
-        margin-bottom: 1rem;
+        line-height: 2rem;
+        margin-bottom: 0.5rem;
         font-weight: 600;
       }
 
@@ -40,6 +42,13 @@
         img {
           height: 15px;
           margin: 2px 2px 0;
+        }
+      }
+      .summary {
+        display: flex;
+        justify-content: flex-start;
+        div + div {
+          margin-left: 5px;
         }
       }
 
@@ -64,12 +73,12 @@
     .reviewTitle {
       font-size: 2.5rem;
       font-weight: 600;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
       text-align: left;
     }
     .arrow {
       position: absolute;
-      bottom: 120px;
+      bottom: 90px;
       cursor: pointer;
       &:hover {
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
@@ -88,8 +97,9 @@
       flex-wrap: nowrap;
       align-items: center;
       overflow: hidden;
-      height: 350px;
+      height: 270px;
       transition: 1s ease;
+      cursor: pointer;
     }
   }
 }
