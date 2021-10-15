@@ -19,12 +19,11 @@ export default function useYoutube(title:any) {
         }
         })
         .then((res: any) => res['data']['items'].filter((item: any) => {
-            if (item['snippet']['title'].includes(title.slice(0,6)) || item['snippet']['description'].includes(title.slice(0,6))) {
+            if (item['snippet']['title'].replace(' ', '').includes(title.split(':')[0].replace(' ', '').replace(',','').slice(0,6)) || item['snippet']['description'].replace(' ', '').includes(title.split(':')[0].replace(' ', '').replace(',','').slice(0,6))) {
                 return item.id.videoId
             }
         }))
         .then((res:any) => res.map((item:any) => item.id.videoId))
-        console.log(response)
         setVideoList(response)
         return response
     }

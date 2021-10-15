@@ -4,51 +4,62 @@ import InfoText from '../Common/InfoText';
 import MovieItem from './MovieItem';
 import Button from '../Common/Button';
 import { useHistory, useLocation } from 'react-router';
+import axios from 'axios';
 
 
 export default function ResultContent() {
     const history = useHistory()
     const location : any = useLocation()
+    const [whole, setWhole] = useState([])
     const [data, setData] = useState([])
+    const userName = sessionStorage.getItem('username') || "익명"
+    const resUrl = "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/filter"    
 
     const handleRedo = () => {
         history.push('/test')
     }
     useEffect(() => {
         if (location.state) {
-            setData(location.state.slice(0,8))
+            setData(location.state.part.slice(0,8))
+            setWhole(location.state.whole)
         } else {
-            fetch('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/contents')
-                .then(res => res.json())
-                .then(res => res.data.slice(0,8))
+            axios.post(resUrl, {
+                email: sessionStorage.getItem('email')
+            })
+                .then((res:any) => {
+                    setWhole(res.data.data)
+                    return res.data.data
+                })
+                .then((res:any) => res.slice(0,8))
                 .then((res:any) => {
                     setData(res)
-                    console.log('요청한 결과: ',res)
-                })
+                })           
         }
         
     }, [])
 
     const handleRecommendation = () => {
-        alert('새로운 결과 요청중...')
         const lastDataId = data[7]['id']
-        console.log(lastDataId)
-        // TODO: api 한 번 더 요청하고 slicing 하기 
-        // const prevIndex = data.findIndex(i => i['id']===lastDataId)
-        // setData(받은데이터.slice(prevIndex+1, prevIndex+8))
+        const prevIndex = whole.findIndex((i:any) => i['id'] === lastDataId)
+        if (prevIndex+9 <= whole.length) {
+            setData(whole.slice(prevIndex+1, prevIndex+9))
+        } else {
+            setData(whole.slice(0,8))
+        }
     }
     return (
         <div id='ResultContent'>
             <div className='resultDesc'>
-                <InfoText>XXX님을 위한 컨텐츠 제안</InfoText>
-                <p>로맨스, 스릴러, 액션 장르를 좋아하는 XXX님께는 이런 영화를 추천드려요! <br />클릭해서 리뷰를 확인해보세요.</p>
+                <InfoText>{userName}님을 위한 컨텐츠 제안</InfoText>
+                <p>클릭해서 리뷰를 확인해보세요.</p>
             </div>
             <div className='movieList'>
                 {data && data.map((item: any)=><MovieItem image={item.thumbnail} key={item.id} title={item.title} onClick={()=>history.push({
                     pathname: `/watchvideo/${item.id}`,
                     state: {
                         cur: item,
-                        whole: data
+                        part: data,
+                        whole: whole
                     }
                 })} />)}
             </div>
