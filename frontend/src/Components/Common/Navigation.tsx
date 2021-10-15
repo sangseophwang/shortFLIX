@@ -15,7 +15,13 @@ export default function Navigation(): JSX.Element {
         {!loggedInfo ? (
           <Link to="/login">로그인</Link>
         ) : (
-          <Link to="/mypage">마이페이지</Link>
+          <a
+            onClick={() => {
+              window.location.replace("/mypage");
+            }}
+          >
+            마이페이지
+          </a>
         )}
       </div>
     </div>
