@@ -5,7 +5,7 @@ import json
 bp = Blueprint('survey_result',__name__)
 
 # Default route
-@bp.route('/survey_result', methods=['POST'])
+@bp.route('/survey-result', methods=['POST'])
 def survey_result():
   request_data = json.loads(request.data) 
 
