@@ -11,7 +11,7 @@ type MovieITemProps = {
 export default function MovieItem( { image, title, onClick }:MovieITemProps) {
     const history = useHistory()
     return (
-        <div className='movieItem' onClick={()=>history.push('/watchVideo')}>
+        <div className='movieItem' onClick={onClick}>
             <img src={image} />
             <div className='movieTitle'>
                 {title}

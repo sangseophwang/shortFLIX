@@ -6,13 +6,15 @@ def recent_reviews(request_data):
     user_email = request_data['email']
     url_view = request_data['url']
     data = User.query.filter_by(email = user_email).first()
-    reviews = json.loads(data.latest_reviews_list)['urls']
+    reviews = data.latest_reviews_list
 
     view_list = []
     viewed_dict = {}
+
     if reviews is None:
         view_list.append(url_view)
     else:
+        reviews = json.loads(data.latest_reviews_list)['urls']
         view_list.append(url_view)
         for i in reviews:
             view_list.append(i)
