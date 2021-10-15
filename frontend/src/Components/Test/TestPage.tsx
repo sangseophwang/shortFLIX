@@ -42,203 +42,8 @@ const years = [
 
 const keywordObjList = [
     {
-        "id": "집행",
-        "keyword": "집행",
-        "desc": ""
-    },
-    {
-        "id": "시리즈",
-        "keyword": "시리즈",
-        "desc": ""
-    },
-    {
-        "id": "게임",
-        "keyword": "게임",
-        "desc": ""
-    },
-    {
-        "id": "인류",
-        "keyword": "인류",
-        "desc": ""
-    },
-    {
-        "id": "퀸",
-        "keyword": "퀸",
-        "desc": ""
-    },
-    {
-        "id": "비밀",
-        "keyword": "비밀",
-        "desc": ""
-    },
-    {
-        "id": "역사",
-        "keyword": "역사",
-        "desc": ""
-    },
-    {
-        "id": "형제",
-        "keyword": "형제",
-        "desc": ""
-    },
-    {
-        "id": "힙합",
-        "keyword": "힙합",
-        "desc": ""
-    },
-    {
-        "id": "무대",
-        "keyword": "무대",
-        "desc": ""
-    },
-    {
-        "id": "호기심",
-        "keyword": "호기심",
-        "desc": ""
-    },
-    {
         "id": "야구",
         "keyword": "야구",
-        "desc": ""
-    },
-    {
-        "id": "거인",
-        "keyword": "거인",
-        "desc": ""
-    },
-    {
-        "id": "좀비",
-        "keyword": "좀비",
-        "desc": ""
-    },
-    {
-        "id": "아들",
-        "keyword": "아들",
-        "desc": ""
-    },
-    {
-        "id": "영화",
-        "keyword": "영화",
-        "desc": ""
-    },
-    {
-        "id": "미국",
-        "keyword": "미국",
-        "desc": ""
-    },
-    {
-        "id": "범죄",
-        "keyword": "범죄",
-        "desc": ""
-    },
-    {
-        "id": "진실",
-        "keyword": "진실",
-        "desc": ""
-    },
-    {
-        "id": "조직",
-        "keyword": "조직",
-        "desc": ""
-    },
-    {
-        "id": "변호사",
-        "keyword": "변호사",
-        "desc": ""
-    },
-    {
-        "id": "세계대전",
-        "keyword": "세계대전",
-        "desc": ""
-    },
-    {
-        "id": "아버지",
-        "keyword": "아버지",
-        "desc": ""
-    },
-    {
-        "id": "마약",
-        "keyword": "마약",
-        "desc": ""
-    },
-    {
-        "id": "살인",
-        "keyword": "살인",
-        "desc": ""
-    },
-    {
-        "id": "요괴",
-        "keyword": "요괴",
-        "desc": ""
-    },
-    {
-        "id": "조선",
-        "keyword": "조선",
-        "desc": ""
-    },
-    {
-        "id": "드래곤",
-        "keyword": "드래곤",
-        "desc": ""
-    },
-    {
-        "id": "발견",
-        "keyword": "발견",
-        "desc": ""
-    },
-    {
-        "id": "전쟁",
-        "keyword": "전쟁",
-        "desc": ""
-    },
-    {
-        "id": "마음",
-        "keyword": "마음",
-        "desc": ""
-    },
-    {
-        "id": "작전",
-        "keyword": "작전",
-        "desc": ""
-    },
-    {
-        "id": "소녀",
-        "keyword": "소녀",
-        "desc": ""
-    },
-    {
-        "id": "모험",
-        "keyword": "모험",
-        "desc": ""
-    },
-    {
-        "id": "래그",
-        "keyword": "래그",
-        "desc": ""
-    },
-    {
-        "id": "초원",
-        "keyword": "초원",
-        "desc": ""
-    },
-    {
-        "id": "소년",
-        "keyword": "소년",
-        "desc": ""
-    },
-    {
-        "id": "중학교",
-        "keyword": "중학교",
-        "desc": ""
-    },
-    {
-        "id": "왕",
-        "keyword": "왕",
-        "desc": ""
-    },
-    {
-        "id": "친구",
-        "keyword": "친구",
         "desc": ""
     },
     {
@@ -247,213 +52,8 @@ const keywordObjList = [
         "desc": ""
     },
     {
-        "id": "전문가",
-        "keyword": "전문가",
-        "desc": ""
-    },
-    {
-        "id": "사람",
-        "keyword": "사람",
-        "desc": ""
-    },
-    {
-        "id": "공연",
-        "keyword": "공연",
-        "desc": ""
-    },
-    {
-        "id": "군인",
-        "keyword": "군인",
-        "desc": ""
-    },
-    {
-        "id": "결혼",
-        "keyword": "결혼",
-        "desc": ""
-    },
-    {
-        "id": "딸",
-        "keyword": "딸",
-        "desc": ""
-    },
-    {
-        "id": "로맨스",
-        "keyword": "로맨스",
-        "desc": ""
-    },
-    {
-        "id": "공개",
-        "keyword": "공개",
-        "desc": ""
-    },
-    {
-        "id": "음악",
-        "keyword": "음악",
-        "desc": ""
-    },
-    {
-        "id": "드라마",
-        "keyword": "드라마",
-        "desc": ""
-    },
-    {
-        "id": "부대",
-        "keyword": "부대",
-        "desc": ""
-    },
-    {
-        "id": "시간",
-        "keyword": "시간",
-        "desc": ""
-    },
-    {
-        "id": "총잡이",
-        "keyword": "총잡이",
-        "desc": ""
-    },
-    {
-        "id": "영국",
-        "keyword": "영국",
-        "desc": ""
-    },
-    {
-        "id": "스타",
-        "keyword": "스타",
-        "desc": ""
-    },
-    {
-        "id": "가족",
-        "keyword": "가족",
-        "desc": ""
-    },
-    {
-        "id": "레슬링",
-        "keyword": "레슬링",
-        "desc": ""
-    },
-    {
-        "id": "경찰",
-        "keyword": "경찰",
-        "desc": ""
-    },
-    {
-        "id": "답",
-        "keyword": "답",
-        "desc": ""
-    },
-    {
-        "id": "노래",
-        "keyword": "노래",
-        "desc": ""
-    },
-    {
-        "id": "운명",
-        "keyword": "운명",
-        "desc": ""
-    },
-    {
-        "id": "트리스탄",
-        "keyword": "트리스탄",
-        "desc": ""
-    },
-    {
-        "id": "아이",
-        "keyword": "아이",
-        "desc": ""
-    },
-    {
-        "id": "힘",
-        "keyword": "힘",
-        "desc": ""
-    },
-    {
-        "id": "인생",
-        "keyword": "인생",
-        "desc": ""
-    },
-    {
-        "id": "존재",
-        "keyword": "존재",
-        "desc": ""
-    },
-    {
-        "id": "선수",
-        "keyword": "선수",
-        "desc": ""
-    },
-    {
-        "id": "거리",
-        "keyword": "거리",
-        "desc": ""
-    },
-    {
-        "id": "경쟁",
-        "keyword": "경쟁",
-        "desc": ""
-    },
-    {
-        "id": "복수",
-        "keyword": "복수",
-        "desc": ""
-    },
-    {
-        "id": "음식",
-        "keyword": "음식",
-        "desc": ""
-    },
-    {
-        "id": "공포",
-        "keyword": "공포",
-        "desc": ""
-    },
-    {
-        "id": "다큐멘터리",
-        "keyword": "다큐멘터리",
-        "desc": ""
-    },
-    {
-        "id": "코미디",
-        "keyword": "코미디",
-        "desc": ""
-    },
-    {
-        "id": "죽음",
-        "keyword": "죽음",
-        "desc": ""
-    },
-    {
-        "id": "덴마크",
-        "keyword": "덴마크",
-        "desc": ""
-    },
-    {
-        "id": "사랑",
-        "keyword": "사랑",
-        "desc": ""
-    },
-    {
-        "id": "형사",
-        "keyword": "형사",
-        "desc": ""
-    },
-    {
-        "id": "마지막",
-        "keyword": "마지막",
-        "desc": ""
-    },
-    {
-        "id": "보안관",
-        "keyword": "보안관",
-        "desc": ""
-    },
-    {
-        "id": "미래",
-        "keyword": "미래",
-        "desc": ""
-    },
-    {
-        "id": "테러",
-        "keyword": "테러",
+        "id": "모험",
+        "keyword": "모험",
         "desc": ""
     },
     {
@@ -462,13 +62,378 @@ const keywordObjList = [
         "desc": ""
     },
     {
-        "id": "동료",
-        "keyword": "동료",
+        "id": "웃음",
+        "keyword": "웃음",
         "desc": ""
     },
     {
-        "id": "애니메이션",
-        "keyword": "애니메이션",
+        "id": "사건",
+        "keyword": "사건",
+        "desc": ""
+    },
+    {
+        "id": "집행",
+        "keyword": "집행",
+        "desc": ""
+    },
+    {
+        "id": "아이",
+        "keyword": "아이",
+        "desc": ""
+    },
+    {
+        "id": "경쟁",
+        "keyword": "경쟁",
+        "desc": ""
+    },
+    {
+        "id": "연주",
+        "keyword": "연주",
+        "desc": ""
+    },
+    {
+        "id": "대원",
+        "keyword": "대원",
+        "desc": ""
+    },
+    {
+        "id": "동생",
+        "keyword": "동생",
+        "desc": ""
+    },
+    {
+        "id": "인간",
+        "keyword": "인간",
+        "desc": ""
+    },
+    {
+        "id": "피아노",
+        "keyword": "피아노",
+        "desc": ""
+    },
+    {
+        "id": "복수",
+        "keyword": "복수",
+        "desc": ""
+    },
+    {
+        "id": "덴마크",
+        "keyword": "덴마크",
+        "desc": ""
+    },
+    {
+        "id": "학교",
+        "keyword": "학교",
+        "desc": ""
+    },
+    {
+        "id": "여자",
+        "keyword": "여자",
+        "desc": ""
+    },
+    {
+        "id": "마약",
+        "keyword": "마약",
+        "desc": ""
+    },
+    {
+        "id": "시리즈",
+        "keyword": "시리즈",
+        "desc": ""
+    },
+    {
+        "id": "운명",
+        "keyword": "운명",
+        "desc": ""
+    },
+    {
+        "id": "무대",
+        "keyword": "무대",
+        "desc": ""
+    },
+    {
+        "id": "살인",
+        "keyword": "살인",
+        "desc": ""
+    },
+    {
+        "id": "나치",
+        "keyword": "나치",
+        "desc": ""
+    },
+    {
+        "id": "우정",
+        "keyword": "우정",
+        "desc": ""
+    },
+    {
+        "id": "좀비",
+        "keyword": "좀비",
+        "desc": ""
+    },
+    {
+        "id": "감시",
+        "keyword": "감시",
+        "desc": ""
+    },
+    {
+        "id": "작전",
+        "keyword": "작전",
+        "desc": ""
+    },
+    {
+        "id": "존재",
+        "keyword": "존재",
+        "desc": ""
+    },
+    {
+        "id": "노예",
+        "keyword": "노예",
+        "desc": ""
+    },
+    {
+        "id": "쇼",
+        "keyword": "쇼",
+        "desc": ""
+    },
+    {
+        "id": "마음",
+        "keyword": "마음",
+        "desc": ""
+    },
+    {
+        "id": "아들",
+        "keyword": "아들",
+        "desc": ""
+    },
+    {
+        "id": "사랑",
+        "keyword": "사랑",
+        "desc": ""
+    },
+    {
+        "id": "소년",
+        "keyword": "소년",
+        "desc": ""
+    },
+    {
+        "id": "비밀",
+        "keyword": "비밀",
+        "desc": ""
+    },
+    {
+        "id": "변호사",
+        "keyword": "변호사",
+        "desc": ""
+    },
+    {
+        "id": "돈",
+        "keyword": "돈",
+        "desc": ""
+    },
+    {
+        "id": "죽음",
+        "keyword": "죽음",
+        "desc": ""
+    },
+    {
+        "id": "경찰",
+        "keyword": "경찰",
+        "desc": ""
+    },
+    {
+        "id": "배신자",
+        "keyword": "배신자",
+        "desc": ""
+    },
+    {
+        "id": "초원",
+        "keyword": "초원",
+        "desc": ""
+    },
+    {
+        "id": "공개",
+        "keyword": "공개",
+        "desc": ""
+    },
+    {
+        "id": "그녀",
+        "keyword": "그녀",
+        "desc": ""
+    },
+    {
+        "id": "딸",
+        "keyword": "딸",
+        "desc": ""
+    },
+    {
+        "id": "형제",
+        "keyword": "형제",
+        "desc": ""
+    },
+    {
+        "id": "최고",
+        "keyword": "최고",
+        "desc": ""
+    },
+    {
+        "id": "시간",
+        "keyword": "시간",
+        "desc": ""
+    },
+    {
+        "id": "과거",
+        "keyword": "과거",
+        "desc": ""
+    },
+    {
+        "id": "인류",
+        "keyword": "인류",
+        "desc": ""
+    },
+    {
+        "id": "중학교",
+        "keyword": "중학교",
+        "desc": ""
+    },
+    {
+        "id": "형사",
+        "keyword": "형사",
+        "desc": ""
+    },
+    {
+        "id": "마을",
+        "keyword": "마을",
+        "desc": ""
+    },
+    {
+        "id": "드래곤",
+        "keyword": "드래곤",
+        "desc": ""
+    },
+    {
+        "id": "게임",
+        "keyword": "게임",
+        "desc": ""
+    },
+    {
+        "id": "아버지",
+        "keyword": "아버지",
+        "desc": ""
+    },
+    {
+        "id": "거인",
+        "keyword": "거인",
+        "desc": ""
+    },
+    {
+        "id": "친구",
+        "keyword": "친구",
+        "desc": ""
+    },
+    {
+        "id": "음식",
+        "keyword": "음식",
+        "desc": ""
+    },
+    {
+        "id": "레이스",
+        "keyword": "레이스",
+        "desc": ""
+    },
+    {
+        "id": "기록",
+        "keyword": "기록",
+        "desc": ""
+    },
+    {
+        "id": "영국",
+        "keyword": "영국",
+        "desc": ""
+    },
+    {
+        "id": "인생",
+        "keyword": "인생",
+        "desc": ""
+    },
+    {
+        "id": "소녀",
+        "keyword": "소녀",
+        "desc": ""
+    },
+    {
+        "id": "우리",
+        "keyword": "우리",
+        "desc": ""
+    },
+    {
+        "id": "미래",
+        "keyword": "미래",
+        "desc": ""
+    },
+    {
+        "id": "조직",
+        "keyword": "조직",
+        "desc": ""
+    },
+    {
+        "id": "퀸",
+        "keyword": "퀸",
+        "desc": ""
+    },
+    {
+        "id": "제국",
+        "keyword": "제국",
+        "desc": ""
+    },
+    {
+        "id": "부대",
+        "keyword": "부대",
+        "desc": ""
+    },
+    {
+        "id": "테러",
+        "keyword": "테러",
+        "desc": ""
+    },
+    {
+        "id": "레슬링",
+        "keyword": "레슬링",
+        "desc": ""
+    },
+    {
+        "id": "조선",
+        "keyword": "조선",
+        "desc": ""
+    },
+    {
+        "id": "사람",
+        "keyword": "사람",
+        "desc": ""
+    },
+    {
+        "id": "선수",
+        "keyword": "선수",
+        "desc": ""
+    },
+    {
+        "id": "전설",
+        "keyword": "전설",
+        "desc": ""
+    },
+    {
+        "id": "미국",
+        "keyword": "미국",
+        "desc": ""
+    },
+    {
+        "id": "요괴",
+        "keyword": "요괴",
+        "desc": ""
+    },
+    {
+        "id": "남자",
+        "keyword": "남자",
         "desc": ""
     }
 ]
@@ -529,28 +494,26 @@ export default function TestPage() {
     }
     const handleLast = () => {
         if (page==='keyword') {
-            // data 보내기 (result 값) 
             const last:any = {...result}
             last['keyword'] = Array.from(temp)
-            // axios.post('/survey_result', last)
-            const spinner = setInterval(()=> {
-                //axios.get('/survey_result')
-                    // .then((response: any) => {
-                    //     if (response.status === 200) {
-                    //     console.log(response.data);
-                    //     setResFlag(true)
-                    //     setRes(response.data)
-                    //     }
-                    // })
-            }, 1000)
-            if (resFlag) {
-                clearInterval(spinner)
-                history.push({
-                    pathname: '/result',
-                    state: res
+            axios.post('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/survey-result', {
+                result: last,
+                email: sessionStorage.getItem('email')
+            })
+                .then((res) => console.log(res))
+            setTimeout(()=> {
+                axios.post('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/filter', {
+                    email: sessionStorage.getItem('email')
                 })
-            }
-            
+                    .then((response: any) => {
+                        if (response.status === 200) {
+                            console.log(response.data)
+                            history.push('/result')
+                        } else {
+                            alert('다시 시도해주세요 ㅜㅜ')
+                        }
+                    })
+            }, 1000) 
         }
     }
     

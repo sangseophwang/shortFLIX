@@ -12,19 +12,24 @@ import { useHistory } from "react-router";
 useHistory;
 
 import useYoutube from "./GetYoutube";
+import axios from "axios";
 
 type WatchVideoContentProps = {
   videoDetail: any;
   setPage: any;
   setLink: any;
+  videoPart: any;
   videoAll: any;
+  likes: any;
 };
 
 export default function WatchVideoContent({
   videoDetail,
   setPage,
   setLink,
-  videoAll
+  videoAll,
+  likes,
+  videoPart,
 }: WatchVideoContentProps) {
   const fullStarNum = Math.floor(videoDetail.rating / 2);
   const isHalfStar = videoDetail.rating/2 % 1 >= 0.5 ? true : false;
@@ -33,15 +38,19 @@ export default function WatchVideoContent({
   
   const youtubeInfo = videoDetail['youtubes'] ? videoDetail['youtubes'] : useYoutube(videoDetail.title)
 
-
   return (
     <div id="WatchVideoContent">
       <div className="backToList" onClick={() => {
-        const temp = [...videoAll]
-        if (youtubeInfo.length !== 0) temp[videoDetail.id-1]['youtubes'] = youtubeInfo
+        const temp = [...videoPart]
+        const index = temp.findIndex(i=>i.id ===videoDetail.id)
+        if (youtubeInfo.length !== 0) temp[index]['youtubes'] = youtubeInfo
+        temp[index]['like'] = likes
         history.push({
           pathname: "/result",
-          state: temp
+          state: {
+            part: temp,
+            whole: videoAll
+          }
         })
         }}>
         <img src={chevron_big_left} alt="arrow left image" />
@@ -57,6 +66,7 @@ export default function WatchVideoContent({
           <div className="videoTitle">{videoDetail.title}</div>
           <p>장르: {videoDetail.genre}</p>
           <p>러닝타임: {videoDetail.running_time}</p>
+          <p>연도: {videoDetail.year}</p>
           <p>
             <span className="starRating">
               {Array.from({length: fullStarNum}).map((e, i) => (
@@ -77,7 +87,7 @@ export default function WatchVideoContent({
             </div>
           <div className="hearts">
             <img src={heart_fill} alt="좋아요 이미지" className="heartImg" />
-            <span>{videoDetail.hearts || 5}</span>
+            <span>{likes}</span>
           </div>
         </div>
       </div>
@@ -94,7 +104,14 @@ export default function WatchVideoContent({
               key={item.link}
               url={item.link}
               time={item.duration && getTime(item.duration)}
-              onClick={() => {setPage("youtube"); setLink(item.link)}}
+              onClick={() => {
+                setPage("youtube"); 
+                setLink(item.link);
+                axios.post('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/recent-review', {
+                  email: sessionStorage.getItem('email'),
+                  url: item.link
+                })
+              }}
             />
           ))): (
           <span>유튜브에서 리뷰 영상 추천 받는 중...</span>)

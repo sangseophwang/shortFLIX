@@ -6,14 +6,27 @@ import heart_outline from "../Assets/Image/heart_outline.svg";
 import Disqus from "disqus-react";
 import axios from "axios";
 
-export default function WatchYoutube({ videoDetail, setPage, link }: any) {
-  const [isLike, setIsLike] = useState(false) // fetch한 데이터 넣기
+export default function WatchYoutube({ videoDetail, setPage, link , like, setLikes}: any) {
+  const [isLike, setIsLike] = useState(like) 
+  const baseUrl = "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000"
   const handleLike = () => {
-    // if (isLike) {
-    //   axios.get(`/dislike/${videoDetail.id}`)
-    // } else {
-    //   axios.get(`/like/${videoDetail.id}`)
-    // }
+    if (isLike) {
+      axios.post(`${baseUrl}/dislike/${videoDetail.id}`, {
+        email: sessionStorage.getItem('email')
+      })
+        .then((res) => {
+          if (res.status === 200) setLikes(videoDetail.like -1)
+        })
+        .catch((err:any) => alert('다시 시도해주세요 ㅜㅜ'))
+    } else {
+      axios.post(`${baseUrl}/like/${videoDetail.id}`, {
+        email: sessionStorage.getItem('email')
+      })
+        .then((res) => {
+          if (res.status === 200) setLikes(videoDetail.like +1)
+        })
+        .catch((err:any) => alert('다시 시도해주세요 ㅜㅜ'))
+    }
     setIsLike(!isLike)
   }
   const disqusShortname = 'short-flix'
