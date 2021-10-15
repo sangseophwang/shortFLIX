@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUserAlt, faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GoBack from "../Common/GoBack";
 
 library.add(faUserAlt, faKey);
 
@@ -55,6 +56,7 @@ const Login = () => {
   return (
     <div className="Login__Container">
       <div className="Login__Contents">
+        <GoBack />
         <img className="Login__Logo" src={Logo} alt="" />
         <form className="Login__Form" action="">
           <div>
