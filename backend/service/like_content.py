@@ -36,6 +36,5 @@ def like_contents(content_id, user_email):
 
         user.likes_list = prev + now
         db.session.commit()
-        db.session.close()
     
         return '좋아요 +1'
