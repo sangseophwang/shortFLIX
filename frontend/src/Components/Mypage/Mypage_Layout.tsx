@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./scss/Mypage_Layout.scss";
 import Navigation from "../Common/Navigation";
-import Button from "../Common/Button";
 import LikeSlider from "../Common/LikeSlider";
 import TasteSlider from "../Common/TasteSlider";
 import { useHistory } from "react-router";
 import axios from "axios";
-import { url } from "inspector";
 
 const username = sessionStorage.getItem("username");
 const URL = "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000";
@@ -27,8 +25,7 @@ const Mypage_Layout = () => {
   const history = useHistory();
   const onLogoutHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    axios.get(URL + "/logout").then((response) => {
-      console.log(response.data);
+    axios.get(URL + "/logout").then(() => {
       sessionStorage.removeItem("username");
       sessionStorage.removeItem("email");
       history.push("/");
@@ -73,7 +70,6 @@ const Mypage_Layout = () => {
         }
       });
   }, []);
-  console.log(latestData);
   return (
     <article className="Mypage__Container">
       <Navigation />

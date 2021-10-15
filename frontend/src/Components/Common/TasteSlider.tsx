@@ -16,10 +16,9 @@ function RecentSlider(props: LengthProps) {
     if (props.number && props.number < 7) {
       setWidth(`${props.number * 150}px`);
     } else {
-      setWidth("1100px");
+      setWidth("1200px");
     }
-  }, []);
-  console.log(props.number * 130);
+  }, [props.number]);
   const settings = {
     infinite: true,
     slidesToShow: props.number && props.number < 7 ? props.number : 7,

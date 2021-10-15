@@ -17,8 +17,8 @@ function LikeSlider(props: LengthProps) {
     } else {
       setWidth("900px");
     }
-  }, []);
-  console.log(props.number * 130);
+  }, [props.number]);
+  console.log(width);
   const settings = {
     infinite: true,
     slidesToShow: props.number && props.number < 7 ? props.number : 7,
