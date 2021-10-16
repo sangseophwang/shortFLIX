@@ -496,7 +496,6 @@ export default function TestPage() {
             email: sessionStorage.getItem("email"),
           }
         )
-        .then((res) => console.log(res));
       setTimeout(() => {
         axios
           .post(
