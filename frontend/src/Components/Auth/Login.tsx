@@ -20,10 +20,8 @@ const Login = () => {
     } = e;
     if (name === "id") {
       setId(value);
-      console.log(id);
     } else if (name === "password") {
       setPassword(value);
-      console.log(password);
     }
   };
   const URL =
@@ -37,7 +35,6 @@ const Login = () => {
       })
       .then((response: any) => {
         if (response.status === 200) {
-          console.log(response.data);
           sessionStorage.setItem("username", response.data);
           sessionStorage.setItem("email", id);
           history.push("/");

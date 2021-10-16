@@ -25,15 +25,12 @@ const Register = () => {
     } = e;
     if (name === "id") {
       setId(value);
-      console.log(id);
     } else if (name === "password") {
       setPassword(value);
-      console.log(password);
     } else if (name === "checkPassword") {
       setCheckPassword(value);
     } else if (name === "username") {
       setUsername(value);
-      console.log(username);
     }
   };
   const URL =
@@ -49,7 +46,6 @@ const Register = () => {
         })
         .then((response: any) => {
           if (response.status === 200) {
-            console.log(response.data);
             history.push("/login");
           }
         });
