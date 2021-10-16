@@ -14,7 +14,6 @@ const Test = ({ match }: TestProps) => {
   useEffect(() => {
     setPage(match.params.detail || "");
   }, []);
-  console.log(page);
   return (
     <main id="Test__Container">{!loggedInfo ? <Login /> : <TestPage />}</main>
   );

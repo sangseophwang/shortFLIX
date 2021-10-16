@@ -38,7 +38,6 @@ const Mypage_Layout = () => {
         email: sessionStorage.getItem("email"),
       })
       .then((response) => {
-        console.log(response.data);
         {
           response.data.likes_list === null
             ? {}
@@ -75,8 +74,7 @@ const Mypage_Layout = () => {
         }
       });
   }, []);
-  console.log(latestData);
-  console.log(latestLength);
+
   return (
     <article className="Mypage__Container">
       <Navigation />
