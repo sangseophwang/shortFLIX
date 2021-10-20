@@ -7,26 +7,24 @@ def dislike_contents(content_id, user_email):
     
     prev = user.likes_list
     now = []
-    if prev:
-
-        for i in range(len(prev)):
-            print(i, prev[i]['id'], content_id)
-            if prev[i]['id'] == content_id:
-                prev.pop(i)
-                now = user.likes_list
-                if content.like > 0:
-                    content.like -= 1
-
-                user.likes_list = now
-                db.session.commit() 
-
-                break
-            else:
-                now = user.likes_list
-                
-    else:
+    if not prev:
         return 'empty'
-                
+
+    for i in range(len(prev)):
+        print(i, prev[i]['id'], content_id)
+        if prev[i]['id'] == content_id:
+            prev.pop(i)
+            now = user.likes_list
+            if content.like > 0:
+                content.like -= 1
+
+            user.likes_list = now
+            db.session.commit() 
+
+            break
+        else:
+            now = user.likes_list
+       
     user.likes_list = now
     db.session.commit()  
 
