@@ -4,7 +4,7 @@ import InfoText from "../Common/InfoText";
 import heart_fill from "../Assets/Image/heart_fill.svg";
 import heart_outline from "../Assets/Image/heart_outline.svg";
 import Disqus from "disqus-react";
-import axios from "axios";
+import AzureAxios from "../API/Azure_Api";
 
 export default function WatchYoutube({
   videoDetail,
@@ -14,22 +14,19 @@ export default function WatchYoutube({
   setLikes,
 }: any) {
   const [isLike, setIsLike] = useState(like);
-  const baseUrl = "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000";
   const handleLike = () => {
     if (isLike) {
-      axios
-        .post(`${baseUrl}/dislike/${videoDetail.id}`, {
-          email: sessionStorage.getItem("email"),
-        })
+      AzureAxios.post(`/dislike/${videoDetail.id}`, {
+        email: sessionStorage.getItem("email"),
+      })
         .then((res) => {
           if (res.status === 200) setLikes(videoDetail.like - 1);
         })
         .catch((err: any) => alert("다시 시도해주세요 ㅜㅜ"));
     } else {
-      axios
-        .post(`${baseUrl}/like/${videoDetail.id}`, {
-          email: sessionStorage.getItem("email"),
-        })
+      AzureAxios.post(`/like/${videoDetail.id}`, {
+        email: sessionStorage.getItem("email"),
+      })
         .then((res) => {
           if (res.status === 200) setLikes(videoDetail.like + 1);
         })

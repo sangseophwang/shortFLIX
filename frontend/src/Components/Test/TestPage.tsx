@@ -4,7 +4,7 @@ import Button from "../Common/Button";
 import PageSection from "./PageSection";
 import Loading from "./Loading";
 import { useHistory } from "react-router";
-import axios from "axios";
+import AzureAxios from "../API/Azure_Api";
 
 const genres = [
   { id: "서부", kor: "서부", eng: "Western" },
@@ -488,29 +488,20 @@ export default function TestPage() {
     if (page === "keyword") {
       const last: any = { ...result };
       last["keyword"] = Array.from(temp);
-      axios
-        .post(
-          "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/survey-result",
-          {
-            result: last,
-            email: sessionStorage.getItem("email"),
-          }
-        )
+      AzureAxios.post("/survey-result", {
+        result: last,
+        email: sessionStorage.getItem("email"),
+      });
       setTimeout(() => {
-        axios
-          .post(
-            "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/filter",
-            {
-              email: sessionStorage.getItem("email"),
-            }
-          )
-          .then((response: any) => {
-            if (response.status === 200) {
-              history.push("/result");
-            } else {
-              alert("다시 시도해주세요 ㅜㅜ");
-            }
-          });
+        AzureAxios.post("/filter", {
+          email: sessionStorage.getItem("email"),
+        }).then((response: any) => {
+          if (response.status === 200) {
+            history.push("/result");
+          } else {
+            alert("다시 시도해주세요 ㅜㅜ");
+          }
+        });
       }, 1000);
     }
   };

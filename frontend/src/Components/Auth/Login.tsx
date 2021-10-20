@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./scss/Login.scss";
 import Logo from "../Assets/Image/shortFLIX.png";
 import { useHistory } from "react-router";
@@ -7,6 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUserAlt, faKey } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GoBack from "../Common/GoBack";
+import AzureAxios from "../API/Azure_Api";
 
 library.add(faUserAlt, faKey);
 
@@ -28,11 +28,10 @@ const Login = () => {
     "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/login";
   const onLoginHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    axios
-      .post(URL, {
-        email: id,
-        password: password,
-      })
+    AzureAxios.post("/login", {
+      email: id,
+      password: password,
+    })
       .then((response: any) => {
         if (response.status === 200) {
           sessionStorage.setItem("username", response.data);

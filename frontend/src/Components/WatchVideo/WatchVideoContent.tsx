@@ -12,7 +12,7 @@ import { useHistory } from "react-router";
 useHistory;
 
 import useYoutube from "./GetYoutube";
-import axios from "axios";
+import AzureAxios from "../API/Azure_Api";
 
 type WatchVideoContentProps = {
   videoDetail: any;
@@ -32,27 +32,32 @@ export default function WatchVideoContent({
   videoPart,
 }: WatchVideoContentProps) {
   const fullStarNum = Math.floor(videoDetail.rating / 2);
-  const isHalfStar = videoDetail.rating/2 % 1 >= 0.5 ? true : false;
+  const isHalfStar = (videoDetail.rating / 2) % 1 >= 0.5 ? true : false;
   const [videoNum, setVideoNum] = useState(0);
   const history = useHistory();
-  
-  const youtubeInfo = videoDetail['youtubes'] ? videoDetail['youtubes'] : useYoutube(videoDetail.title)
+
+  const youtubeInfo = videoDetail["youtubes"]
+    ? videoDetail["youtubes"]
+    : useYoutube(videoDetail.title);
 
   return (
     <div id="WatchVideoContent">
-      <div className="backToList" onClick={() => {
-        const temp = [...videoPart]
-        const index = temp.findIndex(i=>i.id ===videoDetail.id)
-        if (youtubeInfo.length !== 0) temp[index]['youtubes'] = youtubeInfo
-        temp[index]['like'] = likes
-        history.push({
-          pathname: "/result",
-          state: {
-            part: temp,
-            whole: videoAll
-          }
-        })
-        }}>
+      <div
+        className="backToList"
+        onClick={() => {
+          const temp = [...videoPart];
+          const index = temp.findIndex((i) => i.id === videoDetail.id);
+          if (youtubeInfo.length !== 0) temp[index]["youtubes"] = youtubeInfo;
+          temp[index]["like"] = likes;
+          history.push({
+            pathname: "/result",
+            state: {
+              part: temp,
+              whole: videoAll,
+            },
+          });
+        }}
+      >
         <img src={chevron_big_left} alt="arrow left image" />
         목록으로 돌아가기
       </div>
@@ -69,7 +74,7 @@ export default function WatchVideoContent({
           <p>연도: {videoDetail.year}</p>
           <p>
             <span className="starRating">
-              {Array.from({length: fullStarNum}).map((e, i) => (
+              {Array.from({ length: fullStarNum }).map((e, i) => (
                 <img src={full_star} key={`star-${i}`} />
               ))}
               {isHalfStar ? <img src={half_star} /> : <img src={empty_star} />}
@@ -77,14 +82,10 @@ export default function WatchVideoContent({
             </span>
             {videoDetail.rating}
           </p>
-          <div className='summary'>
-            <div>
-              줄거리: 
-            </div>
-            <div>
-              {videoDetail.synop}
-            </div>
-            </div>
+          <div className="summary">
+            <div>줄거리:</div>
+            <div>{videoDetail.synop}</div>
+          </div>
           <div className="hearts">
             <img src={heart_fill} alt="좋아요 이미지" className="heartImg" />
             <span>{likes}</span>
@@ -99,32 +100,36 @@ export default function WatchVideoContent({
           style={{ marginLeft: `-${412 * videoNum}px` }}
         >
           {youtubeInfo.length > 0 ? (
-            youtubeInfo.map((item: any) => (item.link !== undefined && 
-            <YoutubeThumbnail
-              key={item.link}
-              url={item.link}
-              time={item.duration && getTime(item.duration)}
-              onClick={() => {
-                setPage("youtube"); 
-                setLink(item.link);
-                axios.post('http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/recent-review', {
-                  email: sessionStorage.getItem('email'),
-                  url: item.link
-                })
-              }}
-            />
-          ))): (
-          <span>유튜브에서 리뷰 영상 추천 받는 중...</span>)
-          }
-        </div>
-        {videoNum < youtubeInfo.length-2 && (
-            <img
-              className="arrow arrowRight"
-              src={chevron_big_right}
-              alt="arrow right"
-              onClick={() => setVideoNum(videoNum + 1)}
-            />
+            youtubeInfo.map(
+              (item: any) =>
+                item.link !== undefined && (
+                  <YoutubeThumbnail
+                    key={item.link}
+                    url={item.link}
+                    time={item.duration && getTime(item.duration)}
+                    onClick={() => {
+                      setPage("youtube");
+                      setLink(item.link);
+                      AzureAxios.post("/recent-review", {
+                        email: sessionStorage.getItem("email"),
+                        url: item.link,
+                      });
+                    }}
+                  />
+                )
+            )
+          ) : (
+            <span>유튜브에서 리뷰 영상 추천 받는 중...</span>
           )}
+        </div>
+        {videoNum < youtubeInfo.length - 2 && (
+          <img
+            className="arrow arrowRight"
+            src={chevron_big_right}
+            alt="arrow right"
+            onClick={() => setVideoNum(videoNum + 1)}
+          />
+        )}
         {videoNum >= 1 && (
           <img
             className="arrow arrowLeft"
@@ -138,12 +143,11 @@ export default function WatchVideoContent({
   );
 }
 
-
-const getTime = (time:string) => {
-  const beforeMin = time.split('M')[0].replace('PT','')+'분'
-  if (beforeMin.includes('H')) {
-    return beforeMin.replace('H', '시간 ')
+const getTime = (time: string) => {
+  const beforeMin = time.split("M")[0].replace("PT", "") + "분";
+  if (beforeMin.includes("H")) {
+    return beforeMin.replace("H", "시간 ");
   }
-  if (beforeMin.includes('S')) return '1분 미만'
-  return beforeMin
-}
+  if (beforeMin.includes("S")) return "1분 미만";
+  return beforeMin;
+};
