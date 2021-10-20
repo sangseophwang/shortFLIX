@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./scss/Register.scss";
 import Logo from "../Assets/Image/shortFLIX.png";
 import { useHistory } from "react-router";
@@ -10,6 +9,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AzureAxios from "../API/Azure_Api";
 
 library.add(faUserAlt, faKey, faEnvelope);
 
@@ -33,22 +33,18 @@ const Register = () => {
       setUsername(value);
     }
   };
-  const URL =
-    "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/register";
   const onRegisterHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     if (password === checkPassword) {
-      axios
-        .post(URL, {
-          email: id,
-          password: password,
-          username: username,
-        })
-        .then((response: any) => {
-          if (response.status === 200) {
-            history.push("/login");
-          }
-        });
+      AzureAxios.post("/register", {
+        email: id,
+        password: password,
+        username: username,
+      }).then((response: any) => {
+        if (response.status === 200) {
+          history.push("/login");
+        }
+      });
     }
   };
   return (

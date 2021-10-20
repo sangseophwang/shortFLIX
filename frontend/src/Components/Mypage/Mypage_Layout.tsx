@@ -5,10 +5,9 @@ import LikeSlider from "../Common/LikeSlider";
 import TasteSlider from "../Common/TasteSlider";
 import LatestSlider from "../Common/LatestSlider";
 import { useHistory } from "react-router";
-import axios from "axios";
+import AzureAxios from "../API/Azure_Api";
 
 const username = sessionStorage.getItem("username");
-const URL = "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000";
 
 interface UserData {
   likes_list: any;
@@ -26,53 +25,51 @@ const Mypage_Layout = () => {
   const history = useHistory();
   const onLogoutHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    axios.get(URL + "/logout").then(() => {
+    AzureAxios.get("/logout").then(() => {
       sessionStorage.removeItem("username");
       sessionStorage.removeItem("email");
       history.push("/");
     });
   };
   useEffect(() => {
-    axios
-      .post<UserData>(URL + "/mypage", {
-        email: sessionStorage.getItem("email"),
-      })
-      .then((response) => {
-        {
-          response.data.likes_list === null
-            ? {}
-            : setLikeData(response.data.likes_list);
-        }
-        {
-          response.data.latest_reviews_list === null
-            ? {}
-            : setLatestData(
-                JSON.parse(response.data.latest_reviews_list)["urls"]
-              );
-        }
-        {
-          response.data.preferences === null
-            ? {}
-            : setPreferencesData(response.data.preferences.genre);
-        }
-        {
-          response.data.likes_list === null
-            ? {}
-            : setLikeLength(response.data.likes_list.length);
-        }
-        {
-          response.data.latest_reviews_list === null
-            ? {}
-            : setLatestLength(
-                JSON.parse(response.data.latest_reviews_list)["urls"].length
-              );
-        }
-        {
-          response.data.preferences === null
-            ? {}
-            : setPreferencesLength(response.data.preferences.genre.length);
-        }
-      });
+    AzureAxios.post<UserData>("/mypage", {
+      email: sessionStorage.getItem("email"),
+    }).then((response) => {
+      {
+        response.data.likes_list === null
+          ? {}
+          : setLikeData(response.data.likes_list);
+      }
+      {
+        response.data.latest_reviews_list === null
+          ? {}
+          : setLatestData(
+              JSON.parse(response.data.latest_reviews_list)["urls"]
+            );
+      }
+      {
+        response.data.preferences === null
+          ? {}
+          : setPreferencesData(response.data.preferences.genre);
+      }
+      {
+        response.data.likes_list === null
+          ? {}
+          : setLikeLength(response.data.likes_list.length);
+      }
+      {
+        response.data.latest_reviews_list === null
+          ? {}
+          : setLatestLength(
+              JSON.parse(response.data.latest_reviews_list)["urls"].length
+            );
+      }
+      {
+        response.data.preferences === null
+          ? {}
+          : setPreferencesLength(response.data.preferences.genre.length);
+      }
+    });
   }, []);
 
   return (
