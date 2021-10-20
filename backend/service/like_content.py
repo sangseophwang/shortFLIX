@@ -20,7 +20,7 @@ def like_contents(content_id, user_email):
         'year' : content.year
     })
 
-    if user.likes_list == None:
+    if user.likes_list is None:
         content.like += 1
         now[0]['like'] += 1
         db.session.commit()
@@ -29,12 +29,12 @@ def like_contents(content_id, user_email):
         user.likes_list = [] + now
         db.session.commit()
         return '첫 좋아요 입니다.'
-    else:
-        content.like += 1
-        now[0]['like'] += 1
-        db.session.commit()
+   
+    content.like += 1
+    now[0]['like'] += 1
+    db.session.commit()
 
-        user.likes_list = prev + now
-        db.session.commit()
-    
-        return '좋아요 +1'
+    user.likes_list = prev + now
+    db.session.commit()
+
+    return '좋아요 +1'

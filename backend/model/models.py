@@ -19,7 +19,7 @@ class User(db.Model):
         self.email = email
         self.user_name = user_name
         self.pwd = pwd
-
+    
 class Content(db.Model):
     __tablename__ = 'media_content'
     id = db.Column(db.Integer, primary_key=True)
