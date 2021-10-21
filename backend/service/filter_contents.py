@@ -113,6 +113,9 @@ def filter_content(request_data):
     similar_movies = similar_movies [:32]
     # 결과 값
     idx_similar_movies = similar_movies[['title', 'genre', 'similarity']].index
+    
+    similarity = similar_movies['similarity']
+    print(similarity)
     # idx_similar_movies = similar_movies.index.values()
 
     # DB에 있는 id값과 맞추기 위한 인덱스 + 2
@@ -122,7 +125,7 @@ def filter_content(request_data):
     print(idx_similar_movies)
     contents_dict = {}
     contents_list = []
-    for item in idx_similar_movies:
+    for index,item in enumerate(idx_similar_movies):
         content = Content.query.filter_by(id = item).first()
         contents_list.append({
             'id' : content.id,
@@ -134,7 +137,8 @@ def filter_content(request_data):
             'synop' : content.synop,
             'like':content.like,
             'key_words' : content.key_words,
-            'year' : content.year
+            'year' : content.year,
+            'similarity' : round(similarity.iloc[index],5)
             })
             
     contents_dict['data'] = contents_list
