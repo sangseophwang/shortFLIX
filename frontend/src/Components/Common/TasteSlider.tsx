@@ -15,8 +15,8 @@ function RecentSlider(props: LengthProps) {
   useEffect(() => {
     if (props.number && props.number < 7) {
       setWidth(`${props.number * 150}px`);
-    } else {
-      setWidth("1200px");
+    } else if (props.number >= 7) {
+      setWidth("1100px");
     }
   }, [props.number]);
   const settings = {

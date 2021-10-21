@@ -12,7 +12,7 @@ export default function MainVideo() {
         <img src={Logo} alt="shortFLIX LOGO" />
         <h1>,for your busy life</h1>
         <Link to="/test">
-          <Button styles="btn-sm btn-red">Get Started</Button>
+          <Button styles="btn-sm btn-red">시작하기</Button>
         </Link>
       </section>
 
