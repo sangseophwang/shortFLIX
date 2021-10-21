@@ -57,6 +57,7 @@ export default function ResultContent() {
               image={item.thumbnail}
               key={item.id}
               title={item.title}
+              percent={item.similarity || 0}
               onClick={() =>
                 history.push({
                   pathname: `/watchvideo/${item.id}`,
