@@ -76,7 +76,7 @@ def filter_content(request_data):
     movies.drop(['Unnamed: 0'], axis = 1, inplace = True)
 
     # 딕셔너리 이름이 result라고 하면
-    movies.loc[792] = ['target', 0.0, ' '.join(result['genre']),'year', ' '.join(result['keyword']), 'kind'] 
+    movies.loc[795] = ['target', 0.0, ' '.join(result['genre']),'year', ' '.join(result['keyword']), 'kind'] 
     # 입력받은 값
     # movie의 마지막행 = [제목대신 'target', 임의의 평점 0점, 입력받은 장르,  입력받은 키워드]
 
@@ -116,7 +116,6 @@ def filter_content(request_data):
     
     similarity = similar_movies['similarity']
     print(similarity)
-    # print(similarity[0])
     # idx_similar_movies = similar_movies.index.values()
 
     # DB에 있는 id값과 맞추기 위한 인덱스 + 2
