@@ -4,16 +4,17 @@
     width: 100%;
     .Slider_Item {
       > img {
-        max-width: 130px;
-        height: 155px;
+        max-width: 140px;
+        height: 170px;
       }
       > button {
-        height: 70px;
+        height: 60px;
+        width: 80px;
         margin-bottom: 30px;
       }
       .Latest__Image {
-        width: 180px;
-        height: 110px;
+        width: 150px;
+        height: 90px;
       }
     }
   }

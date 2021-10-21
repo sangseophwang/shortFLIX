@@ -15,9 +15,9 @@ function LatestSlider(props: LengthProps) {
   const LinkURL = `https://www.youtube.com/watch?v=${props.data}`;
   useEffect(() => {
     if (props.number && props.number < 7) {
-      setWidth(`${props.number * 200}px`);
+      setWidth(`${props.number * 175}px`);
     } else {
-      setWidth("1400px");
+      setWidth("1100px");
     }
   }, [props.number]);
   const settings = {

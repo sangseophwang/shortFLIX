@@ -31,20 +31,18 @@
         margin: 8px 0 0 30px;
         font-weight: 700;
       }
+      .Mypage__Empty {
+        color: teal;
+        position: absolute;
+        right: 40%;
+        top: 45%;
+        margin: 35px 0 0 50px;
+        font-size: 20px;
+        font-weight: 400;
+      }
       .Mypage__Title {
         display: flex;
         align-items: center;
-        > a {
-          margin: 0 0 20px 20px;
-          > button {
-            font-weight: 500;
-            transition: 0.5s;
-            &:hover {
-              background-color: tomato;
-              transition: 0.5s;
-            }
-          }
-        }
       }
     }
     .Mypage__Taste {

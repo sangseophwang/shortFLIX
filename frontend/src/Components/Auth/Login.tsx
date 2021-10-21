@@ -24,8 +24,7 @@ const Login = () => {
       setPassword(value);
     }
   };
-  const URL =
-    "http://kdt-vm-0202003.koreacentral.cloudapp.azure.com:5000/login";
+
   const onLoginHandler = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     AzureAxios.post("/login", {
@@ -37,15 +36,13 @@ const Login = () => {
           sessionStorage.setItem("username", response.data);
           sessionStorage.setItem("email", id);
           history.push("/");
-        } else {
-          alert("error!");
         }
       })
       .catch((error) => {
-        if (error.response.data.email) {
-          alert("이메일을 정확히 입력해주세요.");
-        } else if (error.response.data.password) {
-          alert("패스워드를 정확히 입력해주세요.");
+        if (error.response) {
+          alert("이메일과 패스워드를 정확히 입력해주세요.");
+        } else if (error.request) {
+          alert("응답을 받지 못했습니다. 다시 시도해주세요.");
         }
       });
   };
