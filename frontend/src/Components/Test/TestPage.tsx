@@ -443,8 +443,6 @@ export default function TestPage() {
   const [temp, setTemp] = useState(new Set()); // 한 페이지에서 선택한 것 받고 초기화
   const [isChecked, setIsChecked] = useState(false);
   const [page, setPage] = useState("contentType"); // 현재 보여질 페이지
-  const [resFlag, setResFlag] = useState(false);
-  const [res, setRes] = useState([]);
   const history = useHistory();
 
   const checkHandler = ({ target }: any) => {
@@ -558,16 +556,17 @@ export default function TestPage() {
       {page !== undefined && (
         <div className="buttons">
           <Button
-            styles={`btn-md ${temp.size !== 0 && `btn-green`}`}
-            onClick={handleDone}
-          >
-            선택 완료
-          </Button>
-          <Button
             styles={`btn-md ${temp.size === 0 && `btn-red`}`}
             onClick={handleNone}
           >
             모르겠어요
+          </Button>
+          <div style={{ margin: "auto 0" }}>{pageid.indexOf(page) + 1} / 4</div>
+          <Button
+            styles={`btn-md ${temp.size !== 0 && `btn-green`}`}
+            onClick={handleDone}
+          >
+            선택 완료
           </Button>
         </div>
       )}
