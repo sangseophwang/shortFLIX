@@ -40,11 +40,19 @@ const Register = () => {
         email: id,
         password: password,
         username: username,
-      }).then((response: any) => {
-        if (response.status === 200) {
-          history.push("/login");
-        }
-      });
+      })
+        .then((response: any) => {
+          if (response.status === 200) {
+            history.push("/login");
+          }
+        })
+        .catch((error) => {
+          if (error.response) {
+            alert("이미 존재하는 아이디입니다.");
+          } else if (error.request) {
+            alert("응답을 받지 못했습니다. 다시 시도해주세요.");
+          }
+        });
     }
   };
   return (

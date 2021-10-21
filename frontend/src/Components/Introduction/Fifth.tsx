@@ -11,7 +11,7 @@ export default function Fifth() {
         <img className="Fifth__Image" src={Logo} alt="Logo" />
         <p>지금 시작합니다!</p>
         <Link to="/test">
-          <Button styles="btn-sm btn-red">Get Started</Button>
+          <Button styles="btn-sm btn-red">시작하기</Button>
         </Link>
       </section>
     </article>
