@@ -81,6 +81,13 @@ const Mypage_Layout = () => {
             <h1>{username}님의 페이지</h1>
           </section>
           <button onClick={onLogoutHandler}>로그아웃</button>
+          {!preferencesLength && !likeLength && !latestLength ? (
+            <div className="Mypage__Empty">
+              현재 테스트를 진행하지 않아 비어있는 상태입니다 😢
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
         <section className="Mypage__Taste">
           <div>{username}님의 취향</div>

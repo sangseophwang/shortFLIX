@@ -17,7 +17,7 @@ export default function First() {
           </p>
           <p>당신이 원하는 컨텐츠가 바로 이 곳에 있습니다.</p>
           <Link to="/test">
-            <Button styles="btn-sm btn-red">Get Started</Button>
+            <Button styles="btn-sm btn-red">시작하기</Button>
           </Link>
         </section>
         <section className="First__Image">
