@@ -10,7 +10,6 @@ class User(db.Model):
     user_name = db.Column(db.String(50), nullable=False)
     pwd = db.Column(db.String(80), nullable=True)
     preferences = db.Column(db.JSON, nullable=True)
-    # 배열 형태로 insert해야함
     likes_list = db.Column(db.JSON, nullable=True)
     latest_reviews_list = db.Column(db.JSON, nullable=True)
     
